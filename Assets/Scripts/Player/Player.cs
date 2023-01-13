@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public int Health => _health;
     [SerializeField] private float _movementSpeed;
     private MovementController _movementController;
+    private float _sprintSpeed = 20;
+    private float _normalSpeed = 10;
     private Rigidbody2D _playerBody;
     private Camera _mainCamera;
     private Weapon _weapon;
@@ -28,6 +30,8 @@ public class Player : MonoBehaviour
         _weapon = GetComponent<Weapon>();
         _movementController = new MovementController(_playerBody);
         _mainCamera = Camera.main;
+        _normalSpeed = _movementSpeed;
+
 
     }
 
@@ -50,6 +54,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         _movementController.Move(_movementSpeed);
+        Sprint();
     }
 
     public void TryGetDamage(int damage)
@@ -62,6 +67,19 @@ public class Player : MonoBehaviour
         StartRegeneration();
         OnhealthUpdate?.Invoke();
     }
+    
+    private void Sprint()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            _movementSpeed = _sprintSpeed;
+        }
+        else
+        {
+            _movementSpeed = _normalSpeed;
+        }
+    }
+ 
 
     private void StartRegeneration()
     {
