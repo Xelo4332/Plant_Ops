@@ -47,7 +47,9 @@ public class Player : MonoBehaviour
 
     }
 
-
+    //Med hjälp av Vector 2, vi kan hitta våran mus position som är också en  input. Våran karaktär kommer fokursa på mus hela tiden.
+    //Vi ska inte glömma att använda normalized så att vectorer har samma poistionen;
+    //Som ni kan see våran method är Vector 2. Därför behöver vi returna tillbaks direction värde.
     private Vector2 GetMouseWorldPosition()
     {
         Vector2 mouseScreenPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
