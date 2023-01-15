@@ -5,20 +5,23 @@ using UnityEngine;
 public class MeleeAttackScript : MonoBehaviour
 {
 
+    //Kacper
     [SerializeField] private  GameObject _meleeAttackHit;
     [SerializeField] private int _meleeDamage = 3;
     private Player _player;
 
+    //We'll find Player component
     private void Awake()
     {
         _player = GetComponent<Player>();
     }
-
+    //This update will activate Meeleattack Method
     private void Update()
     {
         MeleeAttack();
     }
 
+    //
     private void MeleeAttack()
     {
         if (_meleeAttackHit.activeSelf)
@@ -31,10 +34,11 @@ public class MeleeAttackScript : MonoBehaviour
             _player.CurrentWeapon.UpdateDamage(_meleeDamage);
             _meleeAttackHit.SetActive(true);
             StartCoroutine(DisableWeaponCollider(weaponDamage));
-            
+
         }
     }
 
+    
     private IEnumerator DisableWeaponCollider(int weaponDamage)
     {
         yield return new WaitForSeconds(0.5f);

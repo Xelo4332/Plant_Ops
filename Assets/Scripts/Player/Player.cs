@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
         _movementController = new MovementController(_playerBody, _anim);
         _mainCamera = Camera.main;
         _normalSpeed = _movementSpeed;
+        
 
 
 
@@ -78,10 +79,12 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             _movementSpeed = _sprintSpeed;
+            _anim.SetBool("Sprinting", true);
         }
         else
         {
             _movementSpeed = _normalSpeed;
+            _anim.SetBool("Sprinting", false);
         }
     }
 
