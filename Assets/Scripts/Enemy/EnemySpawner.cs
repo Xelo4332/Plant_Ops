@@ -41,7 +41,7 @@ public class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(_spawnIntervals);
         }
         yield return new WaitForSeconds(10);
-       
+
     }
 
     private void SpawnEnemy()
@@ -57,9 +57,16 @@ public class EnemySpawner : MonoBehaviour
         _aliveEnemiesCount--;
         if (_aliveEnemiesCount == 0)
         {
-            _game.CompleteRound();
+  
+            StartCoroutine(CompleteRoundColdown());
             StartCoroutine(SpawnRoutine());
         }
     }
 
-}
+    private IEnumerator CompleteRoundColdown()
+    {
+
+        yield return new WaitForSeconds(8);          
+       _game.CompleteRound();
+    }
+ }

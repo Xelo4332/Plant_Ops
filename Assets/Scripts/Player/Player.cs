@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D _playerBody;
     private Camera _mainCamera;
     private Weapon _weapon;
+    private Animator _anim;
+    private GameObject _meleeAttackHit;
     public Weapon CurrentWeapon => _weapon;
     private Coroutine _regernerationRoutine;
 
@@ -28,9 +30,11 @@ public class Player : MonoBehaviour
     {
         _playerBody = GetComponent<Rigidbody2D>();
         _weapon = GetComponent<Weapon>();
-        _movementController = new MovementController(_playerBody);
+        _anim = GetComponent<Animator>();
+        _movementController = new MovementController(_playerBody, _anim);
         _mainCamera = Camera.main;
         _normalSpeed = _movementSpeed;
+
 
 
     }
@@ -48,6 +52,7 @@ public class Player : MonoBehaviour
         Vector2 mouseScreenPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = (mouseScreenPosition - (Vector2)transform.position).normalized;
         return direction;
+
 
     }
 
@@ -67,7 +72,7 @@ public class Player : MonoBehaviour
         StartRegeneration();
         OnhealthUpdate?.Invoke();
     }
-    
+
     private void Sprint()
     {
         if (Input.GetKey(KeyCode.LeftShift))
@@ -79,13 +84,13 @@ public class Player : MonoBehaviour
             _movementSpeed = _normalSpeed;
         }
     }
- 
+
 
     private void StartRegeneration()
     {
         if (_regernerationRoutine != null)
         {
-             StopCoroutine(_regernerationRoutine);
+            StopCoroutine(_regernerationRoutine);
             _regernerationRoutine = null;
         }
         _regernerationRoutine = StartCoroutine(RegernerationRoutine());
@@ -101,6 +106,8 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
     }
+
+
 
 
 

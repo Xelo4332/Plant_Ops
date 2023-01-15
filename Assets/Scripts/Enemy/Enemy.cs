@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public event Action Ondie;
     [SerializeField] private int _health;
     [SerializeField] private int _damage;
+    private Game _game;
     private Animator _animator;
     private Coroutine _attackRoutine;
     private Player _player;
@@ -26,6 +27,9 @@ public class Enemy : MonoBehaviour
             Debug.LogError($"Player not found in {name} class!");
             return;
         }
+        _game = FindObjectOfType<Game>();
+        _health = Mathf.Min(_game.Round + 2, 10);
+        
         _aiSetter.target = _player.transform;
     }
 
@@ -36,6 +40,10 @@ public class Enemy : MonoBehaviour
         {
             TryGetDamage();
             Destroy(col.gameObject);
+        }
+        if (col.CompareTag("MeleeHit"))
+        {
+            TryGetDamage();
         }
     }
 
@@ -62,13 +70,11 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-    public void MeleeDamage(int _trueDamage)
-    {
-        _currentHealth = Mathf.Clamp(_currentHealth - _trueDamage, 0, _health);
-    }
+
     private void TryGetDamage()
     {
         _health -= _player.CurrentWeapon.Damage;
+        
         if (_health <= 0)
         {
             _player._score++;

@@ -4,49 +4,45 @@ using UnityEngine;
 
 public class MeleeAttackScript : MonoBehaviour
 {
-    public event System.Action<int> EnemyAttack;
 
-    [SerializeField] private LayerMask _enemyLayer;
-    [SerializeField] private Transform _attackPoint;
-    [SerializeField] private float _attackRange = 1f;
+    [SerializeField] private  GameObject _meleeAttackHit;
     [SerializeField] private int _meleeDamage = 3;
+    private Player _player;
 
-    public void Melee()
+    private void Awake()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _enemyLayer); //  Makes a empty circle and dameges all things with the layer "_enemyLayer" that are in it-Kacper
+        _player = GetComponent<Player>();
+    }
 
-        foreach (Collider2D enemy in hitEnemies)
+    private void Update()
+    {
+        MeleeAttack();
+    }
+
+    private void MeleeAttack()
+    {
+        if (_meleeAttackHit.activeSelf)
         {
-            EnemyAttack?.Invoke(_meleeDamage);
-            enemy.GetComponent<Enemy>().MeleeDamage(_meleeDamage);
-
-
-        }
-
-
-
-
-
-    }
-
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        if (_attackPoint == null)
             return;
-        Gizmos.DrawWireSphere(_attackPoint.position, _attackRange);
+        }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            var weaponDamage = _player.CurrentWeapon.Damage;
+            _player.CurrentWeapon.UpdateDamage(_meleeDamage);
+            _meleeAttackHit.SetActive(true);
+            StartCoroutine(DisableWeaponCollider(weaponDamage));
+            
+        }
     }
+
+    private IEnumerator DisableWeaponCollider(int weaponDamage)
+    {
+        yield return new WaitForSeconds(0.5f);
+        _meleeAttackHit.SetActive(false);
+        _player.CurrentWeapon.UpdateDamage(weaponDamage);
+    }
+
+
+
 }
 

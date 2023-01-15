@@ -28,16 +28,17 @@ public class Weapon : MonoBehaviour
     {
         GameObject bulletInstance = Instantiate(bullet, barrelTip.position, barrelTip.rotation);
         bulletInstance.GetComponent<Rigidbody2D>().velocity = barrelTip.up * _bulletSpeed;
+        Destroy(bulletInstance, 5);
 
     }
 
     private void Reloading()
     {
-        if(Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             MagSize = 30;
             IsReloading = true;
-            Invoke("StopReloading",ReloadTime);
+            Invoke("StopReloading", ReloadTime);
         }
     }
     private void StopReloading()
@@ -48,7 +49,7 @@ public class Weapon : MonoBehaviour
     private void Update()
     {
         Timer += Time.deltaTime;
-        if(IsReloading == false)
+        if (IsReloading == false)
         {
             if (Input.GetMouseButton(0) && Timer > Firerate && MagSize > 0)
             {
@@ -59,6 +60,11 @@ public class Weapon : MonoBehaviour
         }
 
         Reloading();
+    }
+
+    public void UpdateDamage(int newDamage)
+    {
+        _damage = newDamage;
     }
 
 }
