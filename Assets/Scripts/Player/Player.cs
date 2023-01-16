@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
         Vector3 mouse = Input.mousePosition;
         mouse.z = -10;
         Vector2 mouseScreenPosition = _mainCamera.ScreenToWorldPoint(mouse);
-        Vector2 direction = (mouseScreenPosition - (Vector2)transform.position);
+        Vector2 direction = (mouseScreenPosition - (Vector2)transform.position).normalized;
         return direction;
 
 
