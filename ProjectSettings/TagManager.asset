@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullet
   - MeleeHit
+  - Bolt
   layers:
   - Default
   - TransparentFX
