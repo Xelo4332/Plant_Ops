@@ -13,12 +13,14 @@ public class Weapon : MonoBehaviour
     [SerializeField] private int _damage;
     public int Damage => _damage;
 
-    private float Timer;
+    protected float Timer;
     public float Firerate = 0.1f;
 
-    public float MagSize = 30f;
-    [SerializeField] public float ReloadTime;
-    private bool IsReloading;
+    [SerializeField] protected float AmmoCounter = 30f;
+    [SerializeField] protected float MagSize;
+    [SerializeField] protected float ChamberedMagSize;
+    [SerializeField] protected float ReloadTime;
+    protected bool IsReloading;
 
 
 
@@ -28,15 +30,20 @@ public class Weapon : MonoBehaviour
     {
         GameObject bulletInstance = Instantiate(bullet, barrelTip.position, barrelTip.rotation);
         bulletInstance.GetComponent<Rigidbody2D>().velocity = barrelTip.up * _bulletSpeed;
-        Destroy(bulletInstance, 5);
 
     }
 
-    private void Reloading()
+    protected void Reloading()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKeyDown(KeyCode.R) && AmmoCounter > 0)
         {
-            MagSize = 30;
+            AmmoCounter = MagSize;
+            IsReloading = true;
+            Invoke("StopReloading",ReloadTime);
+        }
+        else if(Input.GetKeyDown(KeyCode.R) && AmmoCounter == 0)
+        {
+            AmmoCounter = ChamberedMagSize;
             IsReloading = true;
             Invoke("StopReloading", ReloadTime);
         }
@@ -49,13 +56,13 @@ public class Weapon : MonoBehaviour
     private void Update()
     {
         Timer += Time.deltaTime;
-        if (IsReloading == false)
+        if(IsReloading == false)
         {
-            if (Input.GetMouseButton(0) && Timer > Firerate && MagSize > 0)
+            if (Input.GetMouseButton(0) && Timer > Firerate && AmmoCounter > 0)
             {
                 Fire();
                 Timer = 0;
-                MagSize -= 1;
+                AmmoCounter -= 1;
             }
         }
 
