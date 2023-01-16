@@ -677,7 +677,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856582344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.142, z: 0}
+  m_LocalPosition: {x: 0, y: 0.162, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1207,12 +1207,9 @@ GameObject:
   - component: {fileID: 1000607491335343208}
   - component: {fileID: 1000607491335343211}
   - component: {fileID: 1000607491335343187}
-<<<<<<< HEAD
   - component: {fileID: 1000607491335343219}
   - component: {fileID: 1000607491335343218}
   - component: {fileID: 1000607491335343217}
-=======
->>>>>>> CrossBow/penetration
   - component: {fileID: 1000607491335343216}
   m_Layer: 0
   m_Name: Player
@@ -1376,7 +1373,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 100
   _movementSpeed: 10
-  _crossBow: {fileID: 0}
   _score: 20
 --- !u!114 &1000607491335343216
 MonoBehaviour:
@@ -1387,7 +1383,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000607491335343186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 8c270629984613b4f9fd262a3c40f0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1463,15 +1458,6 @@ MonoBehaviour:
   MagSize: 8
   ChamberedMagSize: 7
   ReloadTime: 1
-=======
-  m_Script: {fileID: 11500000, guid: f6b7d6b0158e642449ff6938c25b505b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  barrelTip: {fileID: 1000607490607987226}
-  bolt: {fileID: 5737248512962568522, guid: f0b5ea7cdf2f96a4f9fa44aa67858ddb, type: 3}
-  _boltSpeed: 40
-  _boltDamage: 3
->>>>>>> CrossBow/penetration
 --- !u!1 &1000607491548692552
 GameObject:
   m_ObjectHideFlags: 0

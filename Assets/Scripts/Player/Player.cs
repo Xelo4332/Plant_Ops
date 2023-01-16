@@ -17,10 +17,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D _playerBody;
     private Camera _mainCamera;
     private Weapon _weapon;
-    public CrossBow _crossBow;
     private Animator _anim;
     private GameObject _meleeAttackHit;
-    
     public Weapon CurrentWeapon => _weapon;
     private Coroutine _regernerationRoutine;
 
@@ -32,7 +30,6 @@ public class Player : MonoBehaviour
     {
         _playerBody = GetComponent<Rigidbody2D>();
         _weapon = GetComponent<Weapon>();
-        _crossBow = GetComponent<CrossBow>();
         _anim = GetComponent<Animator>();
         _movementController = new MovementController(_playerBody, _anim);
         _mainCamera = Camera.main;
