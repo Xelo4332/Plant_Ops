@@ -6,10 +6,13 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField]
     private Transform barrelTip;
-  
 
-    [SerializeField]
-    private GameObject bullet;
+   
+
+    [SerializeField] private GameObject bullet;
+  
+    
+
     [SerializeField] private float _bulletSpeed;
     [SerializeField] private int _damage;
     public int Damage => _damage;
@@ -24,10 +27,7 @@ public class Weapon : MonoBehaviour
 
 
 
-    public void CrossBowAction()
-    {
-
-    }
+    
     // Spawning Bullets with help and bullet has RB
     public void Fire()
     {
@@ -54,6 +54,7 @@ public class Weapon : MonoBehaviour
     private void Update()
     {
         Timer += Time.deltaTime;
+      
         if (IsReloading == false)
         {
             if (Input.GetMouseButton(0) && Timer > Firerate && MagSize > 0)
