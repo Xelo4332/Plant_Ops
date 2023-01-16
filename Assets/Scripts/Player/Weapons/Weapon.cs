@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField]
     private Transform barrelTip;
+  
 
     [SerializeField]
     private GameObject bullet;
@@ -23,6 +24,10 @@ public class Weapon : MonoBehaviour
 
 
 
+    public void CrossBowAction()
+    {
+
+    }
     // Spawning Bullets with help and bullet has RB
     public void Fire()
     {
