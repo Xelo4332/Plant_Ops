@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreDoor: {fileID: 0}
-  _scoreNeededToBuyDoor: 19
+  _scoreNeededToBuyDoor: 20
   _scoreRemovalAfterBuy: 20
 --- !u!61 &784125922
 BoxCollider2D:
