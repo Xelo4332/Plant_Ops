@@ -7,11 +7,14 @@ public class Enemy : MonoBehaviour
 {
     public event Action Ondie;
     [SerializeField] private int _health;
+
     [SerializeField] private int _damage;
     private Game _game;
     private Animator _animator;
     private Coroutine _attackRoutine;
     private Player _player;
+    private CrossBow _crossbow;
+
 
     public int _currentHealth { get; private set; }
 
@@ -19,6 +22,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+        _crossbow = GetComponent<CrossBow>();
         _aiSetter = GetComponent<AIDestinationSetter>();
         _animator = GetComponent<Animator>();
         _player = FindObjectOfType<Player>();
@@ -29,7 +33,7 @@ public class Enemy : MonoBehaviour
         }
         _game = FindObjectOfType<Game>();
         _health = Mathf.Min(_game.Round + 2, 10);
-        
+
         _aiSetter.target = _player.transform;
     }
 
@@ -45,6 +49,11 @@ public class Enemy : MonoBehaviour
         {
             TryGetDamage();
         }
+        if (col.CompareTag("Bolt"))
+        {
+            TryGetDamageCrossbow();
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -71,10 +80,24 @@ public class Enemy : MonoBehaviour
         }
     }
 
+
     private void TryGetDamage()
     {
         _health -= _player.CurrentWeapon.Damage;
-        
+
+        if (_health <= 0)
+        {
+            _player._score++;
+            Ondie?.Invoke();
+            Destroy(gameObject);
+        }
+        _animator.SetTrigger("Hit");
+    }
+
+    private void TryGetDamageCrossbow()
+    {
+        _health -= _player._crossBow._boltDamage;
+
         if (_health <= 0)
         {
             _player._score++;
@@ -86,7 +109,7 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator AttackRoutine()
     {
-        while(gameObject)
+        while (gameObject)
         {
             _player.TryGetDamage(_damage);
             yield return new WaitForSeconds(1);
