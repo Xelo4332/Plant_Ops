@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     private Camera _mainCamera;
     private Weapon _weapon;
     public CrossBow _crossBow;
+    [SerializeField] private AudioClip _walkSound;
     private Animator _anim;
     private GameObject _meleeAttackHit;
 
@@ -47,6 +48,21 @@ public class Player : MonoBehaviour
     private void Update()
     {
         _movementController.Rotate(GetMouseWorldPosition());
+        if (_movementController.MoveDirection != Vector2.zero)
+        {
+            if (AudioManager.instance.CurrentSoundEffct != _walkSound)
+            {
+                AudioManager.instance.PlaySoundEffect(_walkSound);
+            }
+
+        }
+        else
+        {
+            if (AudioManager.instance.CurrentSoundEffct != null)
+            {
+                AudioManager.instance.ClearSoundEffect();
+            }
+        }
 
     }
 

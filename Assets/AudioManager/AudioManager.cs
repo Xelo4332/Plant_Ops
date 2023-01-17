@@ -7,6 +7,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicSource;
     public AudioSource soundEffectSource;
     public static AudioManager instance = null;
+    private AudioClip _currentSoundEffect;
+    public AudioClip CurrentSoundEffct => _currentSoundEffect;
 
     private void Awake()
     {
@@ -32,6 +34,17 @@ public class AudioManager : MonoBehaviour
     {
         soundEffectSource.clip = clip;
         soundEffectSource.Play();
+        if (_currentSoundEffect != clip)
+        {
+            _currentSoundEffect = clip;
+        }
+    }
+
+    public void ClearSoundEffect()
+    {
+        soundEffectSource.Stop();
+        soundEffectSource.clip = null;
+        _currentSoundEffect = null;
     }
 }
 // abdi
