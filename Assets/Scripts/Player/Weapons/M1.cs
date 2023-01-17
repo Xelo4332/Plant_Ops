@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class M1 : Weapon
 {
+
+    
     private void Update()
     {
+
+
+       
+
         Timer += Time.deltaTime;
         if (IsReloading == false)
         {
