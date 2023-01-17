@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
             return;
         }
         _game = FindObjectOfType<Game>();
-        _health = Mathf.Min(_game.Round + 2, 10);
+        _health = Mathf.Min(100 + (_game.Round - 1 )* 10, 300);
 
         _aiSetter.target = _player.transform;
     }

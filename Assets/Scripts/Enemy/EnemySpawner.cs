@@ -59,14 +59,15 @@ public class EnemySpawner : MonoBehaviour
         {
   
             StartCoroutine(CompleteRoundColdown());
-            StartCoroutine(SpawnRoutine());
+  
         }
     }
 
     private IEnumerator CompleteRoundColdown()
     {
 
-        yield return new WaitForSeconds(8);          
-       _game.CompleteRound();
+        yield return new WaitForSeconds(8);
+        _game.CompleteRound();
+        StartCoroutine(SpawnRoutine());          
     }
  }

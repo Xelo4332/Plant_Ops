@@ -18,7 +18,7 @@ public class MysteryBox : MonoBehaviour
         return _weaponsDrop[index];
     }
 
-    private void OnCollisionEnter(Collision col)
+    private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.transform.name == "Player" && Input.GetKeyDown(KeyCode.E))
         {
