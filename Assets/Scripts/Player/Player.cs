@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     private float _normalSpeed = 10;
     private Rigidbody2D _playerBody;
     private Camera _mainCamera;
-    private Weapon _weapon;
+    [SerializeField] private Weapon _weapon;
     public CrossBow _crossBow;
     [SerializeField] private AudioClip _walkSound;
     private Animator _anim;
@@ -32,7 +32,6 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         _playerBody = GetComponent<Rigidbody2D>();
-        _weapon = GetComponent<Weapon>();
         _crossBow = GetComponent<CrossBow>();
         _anim = GetComponent<Animator>();
         _movementController = new MovementController(_playerBody, _anim);
@@ -48,6 +47,8 @@ public class Player : MonoBehaviour
     private void Update()
     {
         _movementController.Rotate(GetMouseWorldPosition());
+        WeaponHandle();
+
         if (_movementController.MoveDirection != Vector2.zero)
         {
             if (AudioManager.instance.CurrentSoundEffct != _walkSound)
@@ -131,5 +132,25 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void WeaponHandle()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            _weapon.Fire();
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            _weapon.Reloading();
+        }
+    }
+
+    public void UpdateWeapon(Weapon newWeapon)
+    {
+        if (_weapon != newWeapon)
+        {
+            Destroy(_weapon.gameObject);
+            _weapon = Instantiate(newWeapon, transform);
+        }
+    }
 
 }

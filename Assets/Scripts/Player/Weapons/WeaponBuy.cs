@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponBuy : MonoBehaviour
 {
-    [SerializeField] private GameObject _weapon;
+    [SerializeField] private Weapon _weapon;
     [SerializeField] private int _price;
 
     
@@ -21,10 +21,11 @@ public class WeaponBuy : MonoBehaviour
         if (_player._score >= _price)
       { 
          
-        if (Input.GetKey(KeyCode.E) && _weapon.active == false && col.gameObject.transform.name == "Player")
+        if (Input.GetKey(KeyCode.E) == false && col.gameObject.transform.name == "Player")
         {
                 _player._score -= _price;
-            _weapon.SetActive(true);
+                _player.UpdateWeapon(_weapon);
+         
         }
       }
 
