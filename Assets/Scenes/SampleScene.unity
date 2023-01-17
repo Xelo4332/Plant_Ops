@@ -1169,7 +1169,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000607490607987227}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0861, y: 0.1761, z: 0}
+  m_LocalPosition: {x: 0.064, y: 0.197, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1347,7 +1347,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 83bd71f66f25cac49be7c8d7144473cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1373,6 +1373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 100
   _movementSpeed: 10
+  _crossBow: {fileID: 0}
   _score: 20
 --- !u!114 &1000607491335343216
 MonoBehaviour:
@@ -1381,7 +1382,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000607491335343186}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c270629984613b4f9fd262a3c40f0ad, type: 3}
   m_Name: 
@@ -1402,7 +1403,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000607491335343186}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 067375a99f69e2541aee5a73abd803fd, type: 3}
   m_Name: 
@@ -1423,7 +1424,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000607491335343186}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b24175f70eec7934887dfccdb01ab708, type: 3}
   m_Name: 
@@ -1450,7 +1451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barrelTip: {fileID: 1000607490607987226}
-  bullet: {fileID: 8590871664740684571, guid: 07d167d5e64578a4ba491eeab970c7a4, type: 3}
+  bullet: {fileID: 3023299857883123248, guid: caf6a1d59abf1b54b8098d956514e12a, type: 3}
   _bulletSpeed: 30
   _damage: 10
   Firerate: 0.2
@@ -1484,7 +1485,7 @@ Transform:
   m_GameObject: {fileID: 1000607491548692552}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.028, y: 0.07342995, z: 0}
-  m_LocalScale: {x: 2.5909302, y: 2.5909302, z: 2.5909302}
+  m_LocalScale: {x: 1.51458, y: 1.51458, z: 1.51458}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1000607491335343212}
