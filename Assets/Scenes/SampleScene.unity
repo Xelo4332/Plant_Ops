@@ -826,7 +826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &669472246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1637,7 +1637,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1743657659}
   - component: {fileID: 1743657661}
-  - component: {fileID: 1743657660}
   m_Layer: 0
   m_Name: M1
   m_TagString: Untagged
@@ -1660,27 +1659,6 @@ Transform:
   m_Father: {fileID: 1000607491335343212}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1743657660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743657658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9e4236e8e3372d43888c68d18083ecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  barrelTip: {fileID: 1000607490607987226}
-  bullet: {fileID: 8590871664740684571, guid: 07d167d5e64578a4ba491eeab970c7a4, type: 3}
-  _bulletSpeed: 30
-  _damage: 10
-  Firerate: 0.2
-  AmmoCounter: 30
-  MagSize: 8
-  ChamberedMagSize: 7
-  ReloadTime: 1
 --- !u!212 &1743657661
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2126,6 +2104,7 @@ GameObject:
   - component: {fileID: 1000607491335343211}
   - component: {fileID: 1000607491335343187}
   - component: {fileID: 1000607491335343216}
+  - component: {fileID: 1000607491335343217}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2308,6 +2287,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weapon: {fileID: 0}
   _price: 0
+--- !u!114 &1000607491335343217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000607491335343186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9e4236e8e3372d43888c68d18083ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrelTip: {fileID: 1000607490607987226}
+  bullet: {fileID: 8590871664740684571, guid: 07d167d5e64578a4ba491eeab970c7a4, type: 3}
+  _bulletSpeed: 30
+  _damage: 10
+  Firerate: 0.2
+  AmmoCounter: 30
+  MagSize: 8
+  ChamberedMagSize: 7
+  ReloadTime: 1
 --- !u!1 &1000607491548692552
 GameObject:
   m_ObjectHideFlags: 0

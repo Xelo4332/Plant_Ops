@@ -5,6 +5,7 @@ using Pathfinding;
 using System;
 public class Enemy : MonoBehaviour
 {
+    public GameObject _blood;
     public event Action Ondie;
     [SerializeField] private int _health;
 
@@ -88,6 +89,7 @@ public class Enemy : MonoBehaviour
         if (_health <= 0)
         {
             _player._score++;
+            Instantiate(_blood, transform.position, Quaternion.identity);
             Ondie?.Invoke();
             Destroy(gameObject);
         }
