@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [Range(0, 100)]
     [SerializeField] private int _health;
     public int Health => _health;
+    public event Action OnScoreUpdate;
     [SerializeField] private float _movementSpeed;
     private MovementController _movementController;
     private float _sprintSpeed = 20;
@@ -47,7 +48,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         _movementController.Rotate(GetMouseWorldPosition());
-        
+
         if (_movementController.MoveDirection != Vector2.zero)
         {
             if (AudioManager.instance.CurrentSoundEffct != _walkSound)
@@ -131,7 +132,7 @@ public class Player : MonoBehaviour
         }
     }
 
- 
+
 
     public void UpdateWeapon(Weapon newWeapon)
     {
@@ -142,4 +143,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void UpdateScore(int score)
+    {
+        _score += score;
+        OnScoreUpdate?.Invoke();
+    }
 }

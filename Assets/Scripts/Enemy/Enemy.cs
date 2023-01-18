@@ -89,11 +89,12 @@ public class Enemy : MonoBehaviour
         if (_health <= 0)
         {
             _player._score++;
+            _player.UpdateScore(1);
             Instantiate(_blood, transform.position, Quaternion.identity);
             Ondie?.Invoke();
             Destroy(gameObject);
         }
-        _animator.SetTrigger("Hit");
+        //_animator.SetTrigger("Hit");
     }
 
     private void TryGetDamageCrossbow()
