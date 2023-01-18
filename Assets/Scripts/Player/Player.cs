@@ -47,8 +47,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         _movementController.Rotate(GetMouseWorldPosition());
-        WeaponHandle();
-
+        
         if (_movementController.MoveDirection != Vector2.zero)
         {
             if (AudioManager.instance.CurrentSoundEffct != _walkSound)
@@ -132,17 +131,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void WeaponHandle()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            _weapon.Fire();
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            _weapon.Reloading();
-        }
-    }
+ 
 
     public void UpdateWeapon(Weapon newWeapon)
     {

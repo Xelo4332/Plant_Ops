@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField]
     private Transform barrelTip;
-  
+
 
     [SerializeField]
     private GameObject bullet;
@@ -33,35 +33,46 @@ public class Weapon : MonoBehaviour
     // Spawning Bullets with help and bullet has RB
     public void Fire()
     {
-        if (IsReloading == false)
-        { 
-           GameObject bulletInstance = Instantiate(bullet, barrelTip.position, barrelTip.rotation);
-           bulletInstance.GetComponent<Rigidbody2D>().velocity = barrelTip.up * _bulletSpeed;
-           AmmoCounter--;
-        }
-           
+        GameObject bulletInstance = Instantiate(bullet, barrelTip.position, barrelTip.rotation);
+        bulletInstance.GetComponent<Rigidbody2D>().velocity = barrelTip.up * _bulletSpeed;
 
     }
 
     public void Reloading()
     {
-        if (AmmoCounter > 0)
+        if (Input.GetKeyDown(KeyCode.R) && AmmoCounter > 0)
         {
             AmmoCounter = MagSize;
+            IsReloading = true;
+            Invoke("StopReloading", ReloadTime);
         }
-        else if (AmmoCounter == 0)
+        else if (Input.GetKeyDown(KeyCode.R) && AmmoCounter == 0)
         {
             AmmoCounter = ChamberedMagSize;
+            IsReloading = true;
+            Invoke("StopReloading", ReloadTime);
         }
-        IsReloading = true;
-        Invoke("StopReloading", ReloadTime);
     }
     private void StopReloading()
     {
         IsReloading = false;
     }
 
+    private void Update()
+    {
+        Timer += Time.deltaTime;
+        if (IsReloading == false)
+        {
+            if (Input.GetMouseButton(0) && Timer > Firerate && AmmoCounter > 0)
+            {
+                Fire();
+                Timer = 0;
+                AmmoCounter -= 1;
+            }
+        }
 
+        Reloading();
+    }
 
     public void UpdateDamage(int newDamage)
     {
