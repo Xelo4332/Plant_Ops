@@ -18,16 +18,18 @@ public class WeaponBuy : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (_player._score >= _price)
-      { 
          
-        if (Input.GetKey(KeyCode.E) == false && col.gameObject.transform.name == "Player")
+        if (col.gameObject.transform.name == "Player" && Input.GetKeyDown(KeyCode.E))
         {
+            if (_player._score >= _price)
+            {
                 _player._score -= _price;
                 _player.UpdateWeapon(_weapon);
+            }
+                
          
+        
         }
-      }
 
        
 
