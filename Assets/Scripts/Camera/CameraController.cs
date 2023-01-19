@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    
+
+    
+
     [SerializeField] private Transform _followingTarget;
     private Vector3 _offset;
 
@@ -12,9 +16,10 @@ public class CameraController : MonoBehaviour
         _offset = transform.position - _followingTarget.position;
     }
 
+    
     private void LateUpdate()
     {
         transform.position = _followingTarget.position + _offset;
     }
-
+   
 }
