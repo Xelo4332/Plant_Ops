@@ -3351,11 +3351,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4388207055664008669, guid: 7b32faaeae596e142b3d0fd9aa67762d, type: 3}
       propertyPath: _meleeDamage
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4388207055664008673, guid: 7b32faaeae596e142b3d0fd9aa67762d, type: 3}
       propertyPath: _score
-      value: 1000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4388207055664008673, guid: 7b32faaeae596e142b3d0fd9aa67762d, type: 3}
       propertyPath: _crossBow
