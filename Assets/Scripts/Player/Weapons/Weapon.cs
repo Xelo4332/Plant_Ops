@@ -60,6 +60,7 @@ public class Weapon : MonoBehaviour
 
     private void Update()
     {
+        /*
         Timer += Time.deltaTime;
         if (IsReloading == false)
         {
@@ -68,8 +69,10 @@ public class Weapon : MonoBehaviour
                 Fire();
                 Timer = 0;
                 AmmoCounter -= 1;
+                Destroy(bullet.gameObject, 5);
             }
         }
+        */
 
         Reloading();
     }
