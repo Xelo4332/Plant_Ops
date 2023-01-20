@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnRoutine()
     {
-        _enemiesCount = _game.Round * 5;
+        _enemiesCount = _game.Round * 2;
         _aliveEnemiesCount = _enemiesCount;
         while (_enemiesCount > 0)
         {

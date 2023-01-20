@@ -16,7 +16,7 @@ public class UIPlayerScoreCounter : MonoBehaviour
 
     private void OnScoreChanged()
     {
-        _textComponent.text = $"Score {_playerScore._score}";
+        _textComponent.text = $" {_playerScore._score}";
     }
 
     private void OnDestroy()

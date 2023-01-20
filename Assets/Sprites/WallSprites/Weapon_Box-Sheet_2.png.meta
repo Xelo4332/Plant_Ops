@@ -1,0 +1,871 @@
+fileFormatVersion: 2
+guid: 15db2b22e0dffcc4db067241f48d220d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 131
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f627a3796cf4b7547aeb0802067a2488
+      internalID: -1349096786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_1
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 133
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef9031b8896209f4aa06a88de0bc2172
+      internalID: 608538706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_2
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 0
+        width: 134
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f0319eb2f7032458f8533ff3686b04
+      internalID: 1463239890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_3
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 0
+        width: 135
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23c15c4a91764894aa65e1aef61c6b0e
+      internalID: -502381994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_4
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 0
+        width: 132
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 664f8da2029d688429ea8fdccc119f05
+      internalID: 223189016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_5
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 0
+        width: 135
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8259d63de30372244b868ebeb796c253
+      internalID: -485290759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_6
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 0
+        width: 135
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62776bc791b00cb4ba35d9fd89db9461
+      internalID: 1656806328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_7
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 0
+        width: 132
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 515f20a1872068a41aa4d42cffebe476
+      internalID: -325148005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_8
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 0
+        width: 135
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ddf77b76e5652e45a799a32fb9bcdd5
+      internalID: -1765707528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_9
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 0
+        width: 134
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee0c4f56a5c806043b3cc23fc87558d0
+      internalID: 1401504431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_10
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 0
+        width: 133
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 405e8deedfbf03b489b17edead48f7a8
+      internalID: -24389357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_11
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 0
+        width: 134
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf2ea33883d5da4e8b4148bb7184365
+      internalID: -2109717308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_12
+      rect:
+        serializedVersion: 2
+        x: 1654
+        y: 0
+        width: 133
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07f150b69719b44ebbe8d2cd960dd14
+      internalID: 906085438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_13
+      rect:
+        serializedVersion: 2
+        x: 1791
+        y: 0
+        width: 134
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e20569c3b73a7b4b96ac6c7cc9cd450
+      internalID: 270806128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_14
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 0
+        width: 135
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b025293dd2834f74cb850511b8f95239
+      internalID: -2026786875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_15
+      rect:
+        serializedVersion: 2
+        x: 2068
+        y: 0
+        width: 132
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db0f5bfff86836643b8c0abde260d102
+      internalID: -356534553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_16
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 0
+        width: 135
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68d93d19a6bd21e4a88e7d1e3f5c36ca
+      internalID: -1504209739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_17
+      rect:
+        serializedVersion: 2
+        x: 2342
+        y: 0
+        width: 135
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b25202289f4d2fe4bb68c9ea0239c52f
+      internalID: 1863488001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_18
+      rect:
+        serializedVersion: 2
+        x: 2482
+        y: 0
+        width: 132
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a9b3880f1a7d3e4591f711efb93a709
+      internalID: 1645593517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_19
+      rect:
+        serializedVersion: 2
+        x: 2619
+        y: 0
+        width: 135
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ab159177e728045844bdfc7524af91
+      internalID: -127024379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_20
+      rect:
+        serializedVersion: 2
+        x: 2757
+        y: 0
+        width: 134
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf60e9e4afd97c4d9f87d533533faee
+      internalID: -1468366408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_21
+      rect:
+        serializedVersion: 2
+        x: 2895
+        y: 0
+        width: 133
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9bbddf054ba5b847af6854cbd0328d4
+      internalID: -626064652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_22
+      rect:
+        serializedVersion: 2
+        x: 3033
+        y: 0
+        width: 134
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c88c8d56b67363d438bfec5adcd12596
+      internalID: 85436581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_23
+      rect:
+        serializedVersion: 2
+        x: 3172
+        y: 0
+        width: 133
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2cbf27f5f99546428796b14302e7df8
+      internalID: -645732397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_24
+      rect:
+        serializedVersion: 2
+        x: 3309
+        y: 0
+        width: 134
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15347326b65c4bf4c8d59dce108a1528
+      internalID: -793990581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_25
+      rect:
+        serializedVersion: 2
+        x: 3446
+        y: 0
+        width: 135
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f69fd816fec9365469696597fb36e3f9
+      internalID: -1217383427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_26
+      rect:
+        serializedVersion: 2
+        x: 3586
+        y: 0
+        width: 132
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b369768196c02440a21ff68cb5de120
+      internalID: 895234986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_27
+      rect:
+        serializedVersion: 2
+        x: 3723
+        y: 0
+        width: 135
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d656fcfe1743c243b6a131b14a522da
+      internalID: -715962006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_28
+      rect:
+        serializedVersion: 2
+        x: 3860
+        y: 0
+        width: 135
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85276cf3b30584f47816d9f856b57bf4
+      internalID: -1947881595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_29
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 132
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 344b1542964340641b58686f73552d6f
+      internalID: -1581545876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_30
+      rect:
+        serializedVersion: 2
+        x: 4137
+        y: 0
+        width: 135
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82187506e5c576143a3a57c5208ebf54
+      internalID: 329619291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_31
+      rect:
+        serializedVersion: 2
+        x: 4275
+        y: 0
+        width: 134
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f0757d9bd4f9db4c8d07e0439b66bac
+      internalID: -2098769239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_32
+      rect:
+        serializedVersion: 2
+        x: 4413
+        y: 0
+        width: 133
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eb8be0cc081471458950a6b90805797
+      internalID: 131533633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon_Box-Sheet_2_33
+      rect:
+        serializedVersion: 2
+        x: 4551
+        y: 0
+        width: 131
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6982b797c3844ba4b99af2ecd5047c6e
+      internalID: -1877480464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Weapon_Box-Sheet_2_2: 1463239890
+      Weapon_Box-Sheet_2_17: 1863488001
+      Weapon_Box-Sheet_2_26: 895234986
+      Weapon_Box-Sheet_2_24: -793990581
+      Weapon_Box-Sheet_2_28: -1947881595
+      Weapon_Box-Sheet_2_18: 1645593517
+      Weapon_Box-Sheet_2_11: -2109717308
+      Weapon_Box-Sheet_2_8: -1765707528
+      Weapon_Box-Sheet_2_5: -485290759
+      Weapon_Box-Sheet_2_7: -325148005
+      Weapon_Box-Sheet_2_15: -356534553
+      Weapon_Box-Sheet_2_3: -502381994
+      Weapon_Box-Sheet_2_9: 1401504431
+      Weapon_Box-Sheet_2_4: 223189016
+      Weapon_Box-Sheet_2_14: -2026786875
+      Weapon_Box-Sheet_2_10: -24389357
+      Weapon_Box-Sheet_2_12: 906085438
+      Weapon_Box-Sheet_2_27: -715962006
+      Weapon_Box-Sheet_2_30: 329619291
+      Weapon_Box-Sheet_2_31: -2098769239
+      Weapon_Box-Sheet_2_32: 131533633
+      Weapon_Box-Sheet_2_21: -626064652
+      Weapon_Box-Sheet_2_16: -1504209739
+      Weapon_Box-Sheet_2_29: -1581545876
+      Weapon_Box-Sheet_2_20: -1468366408
+      Weapon_Box-Sheet_2_33: -1877480464
+      Weapon_Box-Sheet_2_19: -127024379
+      Weapon_Box-Sheet_2_22: 85436581
+      Weapon_Box-Sheet_2_13: 270806128
+      Weapon_Box-Sheet_2_25: -1217383427
+      Weapon_Box-Sheet_2_1: 608538706
+      Weapon_Box-Sheet_2_6: 1656806328
+      Weapon_Box-Sheet_2_0: -1349096786
+      Weapon_Box-Sheet_2_23: -645732397
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

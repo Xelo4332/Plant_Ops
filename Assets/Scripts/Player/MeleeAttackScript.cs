@@ -19,6 +19,7 @@ public class MeleeAttackScript : MonoBehaviour
     private void Update()
     {
         MeleeAttack();
+
     }
 
     //
@@ -33,12 +34,17 @@ public class MeleeAttackScript : MonoBehaviour
             var weaponDamage = _player.CurrentWeapon.Damage;
             _player.CurrentWeapon.UpdateDamage(_meleeDamage);
             _meleeAttackHit.SetActive(true);
+            StartCoroutine(MeleeCooldown());
             StartCoroutine(DisableWeaponCollider(weaponDamage));
+
 
         }
     }
 
-    
+    private IEnumerator MeleeCooldown()
+    {
+        yield return new WaitForSeconds(5);
+    }
     private IEnumerator DisableWeaponCollider(int weaponDamage)
     {
         yield return new WaitForSeconds(0.5f);

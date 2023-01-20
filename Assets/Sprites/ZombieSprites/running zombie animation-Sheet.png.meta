@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: running zombie animation-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 41
+        width: 46
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ad972984da973b479c6fb1d7d5909b5
+      internalID: 598647514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running zombie animation-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 43
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 306525d2f88ff894c9f6462200ce3158
+      internalID: 1663513732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running zombie animation-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 43
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44c45a68e576c974b8caa929ac68768e
+      internalID: 1336637407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running zombie animation-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 44
+        width: 48
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb860b259447d74a99eb4bccee39bd9
+      internalID: -1358873127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running zombie animation-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 46
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c802ccc9f6b933488cac32b143c317f
+      internalID: -983551227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running zombie animation-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 42
+        width: 48
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 154c0dc632e88f14193e305d206a9314
+      internalID: 1312891209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running zombie animation-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 40
+        width: 49
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea8edbcf1617824c90b866c7153989f
+      internalID: 1255728593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running zombie animation-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 44
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6572e6cac2bde984d8334d04a00a5e13
+      internalID: -395306479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +282,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      running zombie animation-Sheet_9: -395306479
+      running zombie animation-Sheet_5: -983551227
+      running zombie animation-Sheet_6: 1312891209
+      running zombie animation-Sheet_8: 1255728593
+      running zombie animation-Sheet_1: 1663513732
+      running zombie animation-Sheet_3: -1358873127
+      running zombie animation-Sheet_10: 761124367
+      running zombie animation-Sheet_4: -245361698
+      running zombie animation-Sheet_2: 1336637407
+      running zombie animation-Sheet_11: 15186979
+      running zombie animation-Sheet_0: 598647514
+      running zombie animation-Sheet_12: 27093254
+      running zombie animation-Sheet_7: -597468311
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

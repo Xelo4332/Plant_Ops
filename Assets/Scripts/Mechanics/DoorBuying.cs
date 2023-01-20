@@ -18,19 +18,18 @@ public class DoorBuying : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-
-        if (_scoreDoor._score >= _scoreNeededToBuyDoor)
+        if (col.TryGetComponent(out Player player))
         {
-            if (col.gameObject.transform.name == "Player" && Input.GetKeyDown(KeyCode.E))
+            if (_scoreDoor._score >= _scoreNeededToBuyDoor)
             {
-                this.gameObject.SetActive(false);
-                _scoreDoor._score -= _scoreNeededToBuyDoor;
-                Debug.Log(_scoreDoor);
-
+                if (Input.GetKey(KeyCode.E))
+                {
+                    this.gameObject.SetActive(false);
+                    _scoreDoor._score -= _scoreNeededToBuyDoor;
+                    Debug.Log(_scoreDoor);
+                }
             }
-
         }
-
     }
 
 
