@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2511163777611204150}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.003, y: -0.018, z: 0}
+  m_LocalPosition: {x: 0.45, y: -0.08, z: 0}
   m_LocalScale: {x: 2.6320586, y: 2.6320586, z: 2.6320586}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: e0de12ea31f19e742aea45244908e8c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -184,7 +184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4041567970595419238}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.000000003170786, y: 0.558, z: 0}
+  m_LocalPosition: {x: 0.000000003170786, y: 0.33, z: 0}
   m_LocalScale: {x: 6.8092113, y: 6.8092113, z: 6.8092113}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -241,7 +241,7 @@ MonoBehaviour:
   barrelTip: {fileID: 3204022339923664352}
   bullet: {fileID: 8590871664740684571, guid: 07d167d5e64578a4ba491eeab970c7a4, type: 3}
   _bulletSpeed: 30
-  _damage: 10
+  _damage: 40
   Firerate: 0.2
   AmmoCounter: 30
   MagSize: 8

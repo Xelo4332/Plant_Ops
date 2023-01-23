@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 7166189605587549172}
   - component: {fileID: -383149425211697227}
   - component: {fileID: 6822127814177033513}
+  - component: {fileID: -896952112168184603}
   m_Layer: 0
   m_Name: PeaShoterBullet
   m_TagString: Bullet
@@ -165,3 +166,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-896952112168184603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8590871664740684571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afdc0be1ea4a889408d8248b0b99e3b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bullets: {fileID: 8590871664740684571}

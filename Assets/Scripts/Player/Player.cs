@@ -29,7 +29,10 @@ public class Player : MonoBehaviour
     public int _score;
 
 
-
+    public void Quit()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
     private void Awake()
     {
         _playerBody = GetComponent<Rigidbody2D>();
@@ -47,6 +50,10 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            Quit();
+        }
         _movementController.Rotate(GetMouseWorldPosition());
 
         if (_movementController.MoveDirection != Vector2.zero)
@@ -81,6 +88,10 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            
+        }
         _movementController.Move(_movementSpeed);
         Sprint();
     }
