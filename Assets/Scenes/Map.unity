@@ -2511,7 +2511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreDoor: {fileID: 548329040}
-  _scoreNeededToBuyDoor: 20
+  _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &268786349
 BoxCollider2D:
@@ -2665,7 +2665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreDoor: {fileID: 548329040}
-  _scoreNeededToBuyDoor: 20
+  _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &270712446
 BoxCollider2D:
@@ -2934,7 +2934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreDoor: {fileID: 548329040}
-  _scoreNeededToBuyDoor: 20
+  _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &304410333
 BoxCollider2D:
@@ -4875,7 +4875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreDoor: {fileID: 548329040}
-  _scoreNeededToBuyDoor: 20
+  _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &436504330
 BoxCollider2D:
@@ -5034,7 +5034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreDoor: {fileID: 548329040}
-  _scoreNeededToBuyDoor: 20
+  _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &448624144
 BoxCollider2D:
@@ -11288,7 +11288,7 @@ MonoBehaviour:
   - {fileID: 6653477911216300253, guid: 3fe916bf03f01284d85bd7dddc8ec8aa, type: 3}
   - {fileID: 6653477911216300253, guid: 3fe916bf03f01284d85bd7dddc8ec8aa, type: 3}
   - {fileID: 2774385859990853104, guid: 6dcc403663994624eac62682c0c42e50, type: 3}
-  _spawnIntervals: 1
+  _spawnIntervals: 5
 --- !u!4 &666215115
 Transform:
   m_ObjectHideFlags: 0
@@ -12418,7 +12418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreDoor: {fileID: 548329040}
-  _scoreNeededToBuyDoor: 20
+  _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &782256057
 BoxCollider2D:
@@ -13042,7 +13042,7 @@ MonoBehaviour:
   - {fileID: 6653477911216300253, guid: 3fe916bf03f01284d85bd7dddc8ec8aa, type: 3}
   - {fileID: 6653477911216300253, guid: 3fe916bf03f01284d85bd7dddc8ec8aa, type: 3}
   - {fileID: 6761093243600954237, guid: b28667d48937ba54a88dd1ac4a60afec, type: 3}
-  _spawnIntervals: 1
+  _spawnIntervals: 5
 --- !u!4 &823700619
 Transform:
   m_ObjectHideFlags: 0
@@ -14088,7 +14088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreDoor: {fileID: 548329040}
-  _scoreNeededToBuyDoor: 20
+  _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &894230335
 BoxCollider2D:
@@ -15050,7 +15050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreDoor: {fileID: 548329040}
-  _scoreNeededToBuyDoor: 20
+  _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &973944687
 BoxCollider2D:
@@ -16357,7 +16357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1109393101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16380,7 +16380,7 @@ MonoBehaviour:
   _enemies:
   - {fileID: 6653477911216300253, guid: 3fe916bf03f01284d85bd7dddc8ec8aa, type: 3}
   - {fileID: 6761093243600954237, guid: b28667d48937ba54a88dd1ac4a60afec, type: 3}
-  _spawnIntervals: 1
+  _spawnIntervals: 5
 --- !u!4 &1109393102
 Transform:
   m_ObjectHideFlags: 0
@@ -17577,7 +17577,7 @@ MonoBehaviour:
   _enemies:
   - {fileID: 6653477911216300253, guid: 3fe916bf03f01284d85bd7dddc8ec8aa, type: 3}
   - {fileID: 6761093243600954237, guid: b28667d48937ba54a88dd1ac4a60afec, type: 3}
-  _spawnIntervals: 1
+  _spawnIntervals: 5
 --- !u!4 &1214648618
 Transform:
   m_ObjectHideFlags: 0
@@ -18342,7 +18342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1329456561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18365,7 +18365,7 @@ MonoBehaviour:
   - {fileID: 6653477911216300253, guid: 3fe916bf03f01284d85bd7dddc8ec8aa, type: 3}
   - {fileID: 6653477911216300253, guid: 3fe916bf03f01284d85bd7dddc8ec8aa, type: 3}
   - {fileID: 6761093243600954237, guid: b28667d48937ba54a88dd1ac4a60afec, type: 3}
-  _spawnIntervals: 1
+  _spawnIntervals: 5
 --- !u!4 &1329456562
 Transform:
   m_ObjectHideFlags: 0
@@ -22587,7 +22587,7 @@ MonoBehaviour:
   _enemies:
   - {fileID: 6653477911216300253, guid: 3fe916bf03f01284d85bd7dddc8ec8aa, type: 3}
   - {fileID: 6653477911216300253, guid: 3fe916bf03f01284d85bd7dddc8ec8aa, type: 3}
-  _spawnIntervals: 1
+  _spawnIntervals: 5
 --- !u!4 &1747294571
 Transform:
   m_ObjectHideFlags: 0
@@ -23511,7 +23511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreDoor: {fileID: 548329040}
-  _scoreNeededToBuyDoor: 20
+  _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &1837271078
 BoxCollider2D:
@@ -23848,7 +23848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreDoor: {fileID: 548329040}
-  _scoreNeededToBuyDoor: 20
+  _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &1852090104
 BoxCollider2D:
@@ -25976,7 +25976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreDoor: {fileID: 548329040}
-  _scoreNeededToBuyDoor: 20
+  _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &2044009429
 BoxCollider2D:
@@ -27795,7 +27795,7 @@ MonoBehaviour:
   - {fileID: 436240946}
   _enemies:
   - {fileID: 6653477911216300253, guid: 3fe916bf03f01284d85bd7dddc8ec8aa, type: 3}
-  _spawnIntervals: 1
+  _spawnIntervals: 5
 --- !u!1 &1220564541583372222
 GameObject:
   m_ObjectHideFlags: 0

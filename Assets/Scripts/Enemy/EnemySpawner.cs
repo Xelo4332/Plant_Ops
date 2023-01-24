@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private Transform[] _spawnSpots;
+    [SerializeField] private Wave[] _waves;
     [SerializeField] private Enemy[] _enemies;
     [SerializeField] private float _spawnIntervals;
     private Game _game;
@@ -57,9 +57,9 @@ public class EnemySpawner : MonoBehaviour
         _aliveEnemiesCount--;
         if (_aliveEnemiesCount == 0)
         {
-  
+
             StartCoroutine(CompleteRoundColdown());
-  
+
         }
     }
 
@@ -68,6 +68,12 @@ public class EnemySpawner : MonoBehaviour
 
         yield return new WaitForSeconds(8);
         _game.CompleteRound();
-        StartCoroutine(SpawnRoutine());          
+        StartCoroutine(SpawnRoutine());
     }
- }
+}
+
+public class Wave
+{
+    public Transform[] _SpawnPoints;
+}
+
