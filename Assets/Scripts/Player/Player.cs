@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public event Action Interact;
     public event Action OnhealthUpdate;
     [Range(0, 100)]
     [SerializeField] private int _health;
@@ -41,10 +42,6 @@ public class Player : MonoBehaviour
         _movementController = new MovementController(_playerBody, _anim);
         _mainCamera = Camera.main;
         _normalSpeed = _movementSpeed;
-
-
-
-
     }
 
 
@@ -55,7 +52,8 @@ public class Player : MonoBehaviour
             Quit();
         }
         _movementController.Rotate(GetMouseWorldPosition());
-
+        InteractHandle();
+        /*
         if (_movementController.MoveDirection != Vector2.zero)
         {
             if (AudioManager.instance.CurrentSoundEffct != _walkSound)
@@ -66,12 +64,12 @@ public class Player : MonoBehaviour
         }
         else
         {
-            if (AudioManager.instance.CurrentSoundEffct != null)
+           if (AudioManager.instance.CurrentSoundEffct != null)
             {
                 AudioManager.instance.ClearSoundEffect();
             }
         }
-
+        */
     }
 
     //Med hjälp av Vector 2, vi kan hitta våran mus position som är också en  input. Våran karaktär kommer fokursa på mus hela tiden.
@@ -82,8 +80,6 @@ public class Player : MonoBehaviour
         Vector2 mouseScreenPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = (mouseScreenPosition - (Vector2)transform.position).normalized;
         return direction;
-
-
     }
 
     private void FixedUpdate()
@@ -143,7 +139,13 @@ public class Player : MonoBehaviour
         }
     }
 
-
+    private void InteractHandle()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Interact?.Invoke();
+        }
+    }
 
     public void UpdateWeapon(Weapon newWeapon)
     {
