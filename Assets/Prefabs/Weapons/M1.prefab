@@ -240,6 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrelTip: {fileID: 3204022339923664352}
   bullet: {fileID: 8590871664740684571, guid: 07d167d5e64578a4ba491eeab970c7a4, type: 3}
+  MuzzleFlash: {fileID: 198565511297512439, guid: 0c2edb49fe18a2744a5d2bbf95b4aa58, type: 3}
   _bulletSpeed: 30
   _damage: 40
   Firerate: 0.2
