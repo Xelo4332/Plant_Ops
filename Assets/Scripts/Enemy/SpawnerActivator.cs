@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class SpawnerActivator : MonoBehaviour
 {
-    [SerializeField] private EnemySpawner _spawner;
+    [SerializeField] private int _waveNumber;
+    private EnemySpawner _spawner;
 
+    private void Start()
+    {
+        _spawner = FindObjectOfType<EnemySpawner>();
+    }
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
         {
-            _spawner.gameObject.SetActive(true);
+            _spawner.ActiveWave(_waveNumber);
         }
 
     }
