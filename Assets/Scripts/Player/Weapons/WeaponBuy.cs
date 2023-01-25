@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponBuy : MonoBehaviour
+public class WeaponBuy : InteractibleItem
 {
     [SerializeField] private Weapon _weapon;
     [SerializeField] private int _price;
@@ -19,26 +19,26 @@ public class WeaponBuy : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void OnTriggerStay2D(Collider2D col)
+    protected override void OnTriggerEnter2D(Collider2D col)
     {
-
-        if ((col.TryGetComponent(out Player player)))
-        {
-            if (Input.GetKey(KeyCode.E))
-            {
-                if (_player._score >= _price)
-                {
-                    _openAnimation.SetBool("Open", true);
-                    _player._score -= _price;
-                    _player.UpdateWeapon(_weapon);
-                }
-            }
-        }
+        base.OnTriggerEnter2D(col);
 
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    protected override void OnPlayerInteracted()
     {
+        if (_player._score >= _price)
+        {
+            _openAnimation.SetBool("Open", true);
+            _player._score -= _price;
+            _player.UpdateWeapon(_weapon);
+        }
+    }
+
+
+    protected override void OnTriggerExit2D(Collider2D col)
+    {
+        base.OnTriggerExit2D(col);
         _openAnimation.SetBool("Open", false);
     }
 }

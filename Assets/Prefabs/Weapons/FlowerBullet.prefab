@@ -179,3 +179,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bullets: {fileID: 8590871664740684571}
+  Time: 5
