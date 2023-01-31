@@ -79,7 +79,10 @@ public class Player : MonoBehaviour
     //Som ni kan see våran method är Vector 2. Därför behöver vi returna tillbaks direction värde.
     private Vector2 GetMouseWorldPosition()
     {
-        Vector2 mouseScreenPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 10;
+     
+        Vector2 mouseScreenPosition = _mainCamera.ScreenToWorldPoint(mousePos);
         Vector2 direction = (mouseScreenPosition - (Vector2)transform.position).normalized;
         return direction;
     }
