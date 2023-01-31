@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public event Action OnhealthUpdate;
     [Range(0, 100)]
     [SerializeField] private int _health;
+    [SerializeField] public int MaxHealth = 100;
+    [SerializeField] public int RegenerationAmount = 10;
     public int Health => _health;
     public event Action OnScoreUpdate;
     [SerializeField] private float _movementSpeed;
@@ -131,9 +133,9 @@ public class Player : MonoBehaviour
     private IEnumerator RegernerationRoutine()
     {
         yield return new WaitForSeconds(3);
-        while (_health < 100)
+        while (_health < MaxHealth)
         {
-            _health += 10;
+            _health += RegenerationAmount;
             OnhealthUpdate?.Invoke();
             yield return new WaitForSeconds(1);
         }

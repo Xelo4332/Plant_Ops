@@ -10,8 +10,6 @@ public class Weapon : MonoBehaviour
 
     [SerializeField]
     private GameObject bullet;
-    [SerializeField]
-    private GameObject MuzzleFlash;
     [SerializeField] private float _bulletSpeed;
     [SerializeField] private int _damage;
     public int Damage => _damage;
@@ -36,7 +34,6 @@ public class Weapon : MonoBehaviour
     public void Fire()
     {
         GameObject bulletInstance = Instantiate(bullet, barrelTip.position, barrelTip.rotation);
-        GameObject MuzzleFlashInstance = Instantiate(bullet, barrelTip.position, barrelTip.rotation);
         bulletInstance.GetComponent<Rigidbody2D>().velocity = barrelTip.up * _bulletSpeed;
 
     }
