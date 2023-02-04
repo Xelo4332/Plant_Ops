@@ -42,6 +42,9 @@ public class Player : MonoBehaviour
         _movementController = new MovementController(_playerBody, _anim);
         _mainCamera = Camera.main;
         _normalSpeed = _movementSpeed;
+
+
+        
     }
 
 
