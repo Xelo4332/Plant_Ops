@@ -2131,7 +2131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0f94abe05e2864b832985db41a2c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreDoor: {fileID: 548329040}
+  _player: {fileID: 0}
   _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &268786349
@@ -2285,7 +2285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0f94abe05e2864b832985db41a2c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreDoor: {fileID: 548329040}
+  _player: {fileID: 0}
   _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &270712446
@@ -2615,7 +2615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0f94abe05e2864b832985db41a2c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreDoor: {fileID: 548329040}
+  _player: {fileID: 0}
   _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &304410333
@@ -2983,6 +2983,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3532181273461791536, guid: 7b32faaeae596e142b3d0fd9aa67762d, type: 3}
+      propertyPath: _shoootingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 878dc136044770b41998393565b3bfa7, type: 3}
     - target: {fileID: 4388207055664008668, guid: 7b32faaeae596e142b3d0fd9aa67762d, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3063,6 +3067,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4388207055664008678, guid: 7b32faaeae596e142b3d0fd9aa67762d, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 9f905b96a0241cc4ca32b0e8db4f9426, type: 2}
     - target: {fileID: 4388207055841706437, guid: 7b32faaeae596e142b3d0fd9aa67762d, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -4410,7 +4418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0f94abe05e2864b832985db41a2c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreDoor: {fileID: 548329040}
+  _player: {fileID: 0}
   _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &436504330
@@ -4569,7 +4577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0f94abe05e2864b832985db41a2c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreDoor: {fileID: 548329040}
+  _player: {fileID: 0}
   _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &448624144
@@ -9367,17 +9375,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &548329040 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4388207055664008673, guid: 7b32faaeae596e142b3d0fd9aa67762d, type: 3}
-  m_PrefabInstance: {fileID: 335105270}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b929d08a56d6f9d4ab5375b6845333c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &552548695
 GameObject:
   m_ObjectHideFlags: 0
@@ -11752,7 +11749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0f94abe05e2864b832985db41a2c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreDoor: {fileID: 548329040}
+  _player: {fileID: 0}
   _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &782256057
@@ -13403,7 +13400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0f94abe05e2864b832985db41a2c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreDoor: {fileID: 548329040}
+  _player: {fileID: 0}
   _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &894230335
@@ -14325,7 +14322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0f94abe05e2864b832985db41a2c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreDoor: {fileID: 548329040}
+  _player: {fileID: 0}
   _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &973944687
@@ -15730,6 +15727,102 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1147150868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1147150869}
+  - component: {fileID: 1147150872}
+  - component: {fileID: 1147150871}
+  - component: {fileID: 1147150870}
+  m_Layer: 5
+  m_Name: AmmoUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1147150869
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147150868}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 484967663}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 197.88, y: 147.93}
+  m_Pivot: {x: 1, y: 0}
+--- !u!114 &1147150870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147150868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a39e318c8e59d9f4d93d420142a3da05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ammoText: {fileID: 1147150871}
+--- !u!114 &1147150871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147150868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6886792, g: 0.4312062, b: 0.14726466, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: '0
+
+'
+--- !u!222 &1147150872
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147150868}
+  m_CullTransparentMesh: 1
 --- !u!1 &1151049851
 GameObject:
   m_ObjectHideFlags: 0
@@ -16067,6 +16160,107 @@ Transform:
   m_Father: {fileID: 308868628}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1198183267 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3532181273461791540, guid: 7b32faaeae596e142b3d0fd9aa67762d, type: 3}
+  m_PrefabInstance: {fileID: 335105270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1198183270
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198183267}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 878dc136044770b41998393565b3bfa7, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1200888872
 GameObject:
   m_ObjectHideFlags: 0
@@ -22581,7 +22775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0f94abe05e2864b832985db41a2c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreDoor: {fileID: 548329040}
+  _player: {fileID: 0}
   _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &1837271078
@@ -22919,7 +23113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0f94abe05e2864b832985db41a2c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreDoor: {fileID: 548329040}
+  _player: {fileID: 0}
   _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &1852090104
@@ -25334,7 +25528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0f94abe05e2864b832985db41a2c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreDoor: {fileID: 548329040}
+  _player: {fileID: 0}
   _scoreNeededToBuyDoor: 10
   _scoreRemovalAfterBuy: 10
 --- !u!61 &2044009429

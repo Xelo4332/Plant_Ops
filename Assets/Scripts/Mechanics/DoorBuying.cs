@@ -6,13 +6,13 @@ using System;
 
 public class DoorBuying : MonoBehaviour
 {
-    [SerializeField] private Player _scoreDoor;
+    [SerializeField] private Player _player;
     [SerializeField] private int _scoreNeededToBuyDoor;
     [SerializeField] private int _scoreRemovalAfterBuy;
 
     private void Awake()
     {
-        _scoreDoor = FindObjectOfType<Player>();
+        _player = FindObjectOfType<Player>();
 
     }
 
@@ -20,13 +20,14 @@ public class DoorBuying : MonoBehaviour
     {
         if (col.TryGetComponent(out Player player))
         {
-            if (_scoreDoor._score >= _scoreNeededToBuyDoor)
+            if (_player._score >= _scoreNeededToBuyDoor)
             {
                 if (Input.GetKey(KeyCode.E))
                 {
                     this.gameObject.SetActive(false);
-                    _scoreDoor._score -= _scoreNeededToBuyDoor;
-                    Debug.Log(_scoreDoor);
+                    _player.UpdateScore(-_scoreNeededToBuyDoor);
+  
+                    Debug.Log(_player);
                 }
             }
         }

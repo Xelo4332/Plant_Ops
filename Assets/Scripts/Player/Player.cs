@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 {
     public event Action Interact;
     public event Action OnhealthUpdate;
+    public event Action OnUpdateWeapon;
     [Range(0, 100)]
     [SerializeField] private int _health;
     public int Health => _health;
@@ -44,19 +45,19 @@ public class Player : MonoBehaviour
         _normalSpeed = _movementSpeed;
 
 
-        
+
     }
 
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             Quit();
         }
         _movementController.Rotate(GetMouseWorldPosition());
         InteractHandle();
-        /*
+
         if (_movementController.MoveDirection != Vector2.zero)
         {
             if (AudioManager.instance.CurrentSoundEffct != _walkSound)
@@ -67,12 +68,12 @@ public class Player : MonoBehaviour
         }
         else
         {
-           if (AudioManager.instance.CurrentSoundEffct != null)
+            if (AudioManager.instance.CurrentSoundEffct != null)
             {
                 AudioManager.instance.ClearSoundEffect();
             }
         }
-        */
+
     }
 
     //Med hjälp av Vector 2, vi kan hitta våran mus position som är också en  input. Våran karaktär kommer fokursa på mus hela tiden.
@@ -82,7 +83,7 @@ public class Player : MonoBehaviour
     {
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 10;
-     
+
         Vector2 mouseScreenPosition = _mainCamera.ScreenToWorldPoint(mousePos);
         Vector2 direction = (mouseScreenPosition - (Vector2)transform.position).normalized;
         return direction;
@@ -92,7 +93,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            
+
         }
         _movementController.Move(_movementSpeed);
         Sprint();
@@ -159,6 +160,7 @@ public class Player : MonoBehaviour
         {
             Destroy(_weapon.gameObject);
             _weapon = Instantiate(newWeapon, transform);
+            OnUpdateWeapon?.Invoke();
         }
     }
 
@@ -167,4 +169,6 @@ public class Player : MonoBehaviour
         _score += score;
         OnScoreUpdate?.Invoke();
     }
+
+
 }
