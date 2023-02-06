@@ -157,6 +157,7 @@ MonoBehaviour:
   MagSize: 51
   ChamberedMagSize: 50
   ReloadTime: 1.5
+  _shoootingSound: {fileID: 0}
 --- !u!1 &3076433149361472275
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3076433149361472275}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000000019025, y: 0.174, z: 0}
+  m_LocalPosition: {x: 0.43, y: 0.174, z: 0}
   m_LocalScale: {x: 5.4003606, y: 5.4003606, z: 5.4003606}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -229,7 +230,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: cf77f868a59ea1d49b112f5432e97da4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -265,7 +266,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4103209295739253255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.91, z: 0}
+  m_LocalPosition: {x: 0.47, y: 0.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
