@@ -30,7 +30,7 @@ public class WeaponBuy : InteractibleItem
         if (_player._score >= _price)
         {
             _openAnimation.SetBool("Open", true);
-            _player._score -= _price;
+            _player.UpdateScore(-_price);
             _player.UpdateWeapon(_weapon);
         }
     }

@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Weapon : MonoBehaviour
 {
+    public event Action UpdateAmmo;
+
     [SerializeField]
     private Transform barrelTip;
 
@@ -13,6 +16,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float _bulletSpeed;
     [SerializeField] private int _damage;
     public int Damage => _damage;
+    public float Ammo => AmmoCounter;
+
 
     protected float Timer;
     public float Firerate = 0.1f;
@@ -22,7 +27,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] protected float ChamberedMagSize;
     [SerializeField] protected float ReloadTime;
     protected bool IsReloading;
-
+    [SerializeField] private AudioClip _shoootingSound;
 
 
 
@@ -35,7 +40,9 @@ public class Weapon : MonoBehaviour
     {
         GameObject bulletInstance = Instantiate(bullet, barrelTip.position, barrelTip.rotation);
         bulletInstance.GetComponent<Rigidbody2D>().velocity = barrelTip.up * _bulletSpeed;
-
+        UpdateAmmo?.Invoke();
+        var source = gameObject.GetComponent<AudioSource>();
+        source.Play();
     }
 
     public void Reloading()
@@ -52,6 +59,7 @@ public class Weapon : MonoBehaviour
             IsReloading = true;
             Invoke("StopReloading", ReloadTime);
         }
+        UpdateAmmo?.Invoke();
     }
     private void StopReloading()
     {

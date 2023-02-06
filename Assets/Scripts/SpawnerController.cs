@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnerController : MonoBehaviour
 {
   
-    [SerializeField] private GameObject[] _enemySpawner;
+    [SerializeField] private GameObject [] _enemySpawner;
 
 
     private void OnTriggerEnter2D(Collider2D col)

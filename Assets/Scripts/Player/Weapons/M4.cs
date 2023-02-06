@@ -11,9 +11,9 @@ public class M4 : Weapon
         {
             if (Input.GetMouseButton(0) && Timer > Firerate && AmmoCounter > 0)
             {
+                AmmoCounter--;
                 Fire();
                 Timer = 0;
-                AmmoCounter -= 1;
             }
         }
 

@@ -10,11 +10,11 @@ public class M1 : Weapon
         Timer += Time.deltaTime;
         if (IsReloading == false)
         {
-            if (Input.GetMouseButtonDown(0) && Timer > Firerate && AmmoCounter > 0)
+            if (Input.GetMouseButton(0) && Timer > Firerate && AmmoCounter > 0)
             {
+                AmmoCounter --;
                 Fire();
                 Timer = 0;
-                AmmoCounter -= 1;
             }
         }
 
