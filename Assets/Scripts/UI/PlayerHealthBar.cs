@@ -24,10 +24,10 @@ public class PlayerHealthBar : MonoBehaviour
 
     private void OnPlayerHealthUpdate()
     {
-        if (_player.Health > 50)
+        if (_player._health > 50)
         {
             var newColor = _image.color;
-            newColor.a = 1-(float)_player.Health / 100;
+            newColor.a = 1-(float)_player._health / 100;
             _image.color = newColor;
         }
 

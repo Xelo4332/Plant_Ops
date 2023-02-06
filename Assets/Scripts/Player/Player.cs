@@ -8,11 +8,12 @@ public class Player : MonoBehaviour
 {
     public event Action Interact;
     public event Action OnhealthUpdate;
-    [Range(0, 100)]
-    [SerializeField] private int _health;
+    [Range(0, 200)]
+    [SerializeField] public int _health;
     [SerializeField] public int MaxHealth = 100;
     [SerializeField] public int RegenerationAmount = 10;
-    public int Health => _health;
+   
+
     public event Action OnScoreUpdate;
     [SerializeField] private float _movementSpeed;
     private MovementController _movementController;
