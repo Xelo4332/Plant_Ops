@@ -8,12 +8,10 @@ public class Player : MonoBehaviour
 {
     public event Action Interact;
     public event Action OnhealthUpdate;
-    [Range(0, 200)]
+    public event Action OnUpdateWeapon;
+    [Range(0, 100)]
     [SerializeField] public int _health;
-    [SerializeField] public int MaxHealth = 100;
-    [SerializeField] public int RegenerationAmount = 10;
-   
-
+    [SerializeField] public int RegenerationAmount;
     public event Action OnScoreUpdate;
     [SerializeField] private float _movementSpeed;
     private MovementController _movementController;
@@ -45,18 +43,21 @@ public class Player : MonoBehaviour
         _movementController = new MovementController(_playerBody, _anim);
         _mainCamera = Camera.main;
         _normalSpeed = _movementSpeed;
+
+
+
     }
 
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             Quit();
         }
         _movementController.Rotate(GetMouseWorldPosition());
         InteractHandle();
-        /*
+
         if (_movementController.MoveDirection != Vector2.zero)
         {
             if (AudioManager.instance.CurrentSoundEffct != _walkSound)
@@ -67,12 +68,12 @@ public class Player : MonoBehaviour
         }
         else
         {
-           if (AudioManager.instance.CurrentSoundEffct != null)
+            if (AudioManager.instance.CurrentSoundEffct != null)
             {
                 AudioManager.instance.ClearSoundEffect();
             }
         }
-        */
+
     }
 
     //Med hjälp av Vector 2, vi kan hitta våran mus position som är också en  input. Våran karaktär kommer fokursa på mus hela tiden.
@@ -82,7 +83,7 @@ public class Player : MonoBehaviour
     {
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 10;
-     
+
         Vector2 mouseScreenPosition = _mainCamera.ScreenToWorldPoint(mousePos);
         Vector2 direction = (mouseScreenPosition - (Vector2)transform.position).normalized;
         return direction;
@@ -92,7 +93,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            
+
         }
         _movementController.Move(_movementSpeed);
         Sprint();
@@ -137,7 +138,7 @@ public class Player : MonoBehaviour
     private IEnumerator RegernerationRoutine()
     {
         yield return new WaitForSeconds(3);
-        while (_health < MaxHealth)
+        while (_health < 100)
         {
             _health += RegenerationAmount;
             OnhealthUpdate?.Invoke();
@@ -159,6 +160,7 @@ public class Player : MonoBehaviour
         {
             Destroy(_weapon.gameObject);
             _weapon = Instantiate(newWeapon, transform);
+            OnUpdateWeapon?.Invoke();
         }
     }
 
@@ -167,4 +169,5 @@ public class Player : MonoBehaviour
         _score += score;
         OnScoreUpdate?.Invoke();
     }
+
 }
