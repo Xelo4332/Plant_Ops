@@ -68,19 +68,6 @@ public class Weapon : MonoBehaviour
 
     private void Update()
     {
-        /*
-        Timer += Time.deltaTime;
-        if (IsReloading == false)
-        {
-            if (Input.GetMouseButton(0) && Timer > Firerate && AmmoCounter > 0)
-            {
-                Fire();
-                Timer = 0;
-                AmmoCounter -= 1;
-                Destroy(bullet.gameObject, 5);
-            }
-        }
-        */
 
         Reloading();
     }
