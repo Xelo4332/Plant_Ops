@@ -3,21 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIBuyShow : MonoBehaviour
+public class UIBuyShow : InteractibleItem
 {
-    [SerializeField] private GameObject _buyImage;
+    [SerializeField] private Canvas _UICanvas;
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private new void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Player"))
+    
+
+
+        if (col.TryGetComponent(out Player player))
         {
-            _buyImage.SetActive(true);
+            _UICanvas.enabled = true;
+
         }
     }
 
-    private void OnTriggerExit2D(Collider2D col)
+    private new void OnTriggerExit2D(Collider2D col)
     {
-        _buyImage.SetActive(false);
+        base.OnTriggerExit2D(col);
+        if (col.TryGetComponent(out Player player))
+        {
+            _UICanvas.enabled = false;
+            Debug.Log("test2");
+        }
     }
 
 
