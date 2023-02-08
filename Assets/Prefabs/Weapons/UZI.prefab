@@ -157,7 +157,9 @@ MonoBehaviour:
   MagSize: 51
   ChamberedMagSize: 50
   ReloadTime: 1.5
-  _shoootingSound: {fileID: 0}
+  _reloadingSound: {fileID: 8300000, guid: 6c80ece8b64e4614d910676ab38e679d, type: 3}
+  _shoootingSound: {fileID: 8300000, guid: 878dc136044770b41998393565b3bfa7, type: 3}
+  _muzzleFlash: {fileID: 0}
 --- !u!1 &3076433149361472275
 GameObject:
   m_ObjectHideFlags: 0
