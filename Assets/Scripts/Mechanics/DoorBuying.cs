@@ -26,6 +26,7 @@ public class DoorBuying : MonoBehaviour
                 {
                     this.gameObject.SetActive(false);
                     _player.UpdateScore(-_scoreNeededToBuyDoor);
+
   
                     Debug.Log(_player);
                 }

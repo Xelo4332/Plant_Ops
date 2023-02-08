@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public GameObject _blood;
     public event Action Ondie;
     [SerializeField] private int _health;
-
+    [SerializeField] private BloodSplatter[] _bloodSplat;
     [SerializeField] private int _damage;
     private Game _game;
     private Animator _animator;
@@ -16,10 +16,9 @@ public class Enemy : MonoBehaviour
     private Player _player;
     private CrossBow _crossbow;
 
-
     public int _currentHealth { get; private set; }
-
     private AIDestinationSetter _aiSetter;
+
 
     private void Awake()
     {
@@ -33,7 +32,7 @@ public class Enemy : MonoBehaviour
             return;
         }
         _game = FindObjectOfType<Game>();
-        _health = Mathf.Min(100 + (_game.Round - 1 )* 10, 300);
+        _health = Mathf.Min(100 + (_game.Round - 1) * 10, 300);
 
         _aiSetter.target = _player.transform;
     }
@@ -88,10 +87,11 @@ public class Enemy : MonoBehaviour
 
         if (_health <= 0)
         {
-            _player._score++;
+            //_player._score++;
             _player.UpdateScore(1);
             Instantiate(_blood, transform.position, Quaternion.identity);
             Ondie?.Invoke();
+            CreateBloodSplatter();
             Destroy(gameObject);
         }
         //_animator.SetTrigger("Hit");
@@ -119,4 +119,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void CreateBloodSplatter()
+    {
+        var index = UnityEngine.Random.Range(0, _bloodSplat.Length);
+        Instantiate(_bloodSplat[index], transform.position, Quaternion.identity);
+
+    }
 }

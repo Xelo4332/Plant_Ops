@@ -2,27 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MysteryBox : MonoBehaviour
+public class MysteryBox : InteractibleItem
 {
-    [SerializeField] private GameObject[] _weaponsDrop;
+    [SerializeField] private Weapon[] _weaponsDrop;
     private Player _player;
+    [SerializeField] private int _price;
 
     private void Start()
     {
         _player = FindObjectOfType<Player>();
     }
 
-    private GameObject GetRandomWeapon()
+    private Weapon GetRandomWeapon()
     {
         var index = Random.Range(0, _weaponsDrop.Length);
         return _weaponsDrop[index];
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    protected override void OnPlayerInteracted()
     {
-        if (col.gameObject.transform.name == "Player" && Input.GetKeyDown(KeyCode.E))
+        if (_player._score >= _price)
         {
-            GetRandomWeapon();
+            _player.UpdateWeapon(GetRandomWeapon());
+            _player.UpdateScore(-_price);
         }
+
     }
+
 }

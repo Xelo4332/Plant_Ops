@@ -7,10 +7,12 @@ public class UIAmmo : MonoBehaviour
 {
     [SerializeField] private Text _ammoText;
     private Player _player;
+    private Weapon _weapon;
 
     private void Start()
     {
         _player = FindObjectOfType<Player>();
+        _weapon = FindObjectOfType<Weapon>();
         OnAmmoUpdated();
         OnPLayerWeaponUpdated();
         _player.OnUpdateWeapon += OnPLayerWeaponUpdated;
@@ -31,4 +33,5 @@ public class UIAmmo : MonoBehaviour
     {
         _player.CurrentWeapon.UpdateAmmo += OnAmmoUpdated;
     }
+
 }
