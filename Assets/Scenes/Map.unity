@@ -3827,6 +3827,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3322689832139447237, guid: 7b32faaeae596e142b3d0fd9aa67762d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3532181273461791536, guid: 7b32faaeae596e142b3d0fd9aa67762d, type: 3}
       propertyPath: _muzzleFlash
       value: 
@@ -32623,7 +32627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4696c11edd021b498e306e866497b8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _UICanvas: {fileID: 748316725}
+  _UICanvas: {fileID: 748316721}
 --- !u!1 &2055247407
 GameObject:
   m_ObjectHideFlags: 0

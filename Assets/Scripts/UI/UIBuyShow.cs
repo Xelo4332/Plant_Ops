@@ -5,16 +5,15 @@ using UnityEngine.UI;
 
 public class UIBuyShow : InteractibleItem
 {
-    [SerializeField] private Canvas _UICanvas;
-
+    [SerializeField] private GameObject _UICanvas;
+    [SerializeField]
+ 
     private new void OnTriggerEnter2D(Collider2D col)
     {
-    
-
 
         if (col.TryGetComponent(out Player player))
         {
-            _UICanvas.enabled = true;
+            _UICanvas.SetActive(true);
 
         }
     }
@@ -24,7 +23,7 @@ public class UIBuyShow : InteractibleItem
         base.OnTriggerExit2D(col);
         if (col.TryGetComponent(out Player player))
         {
-            _UICanvas.enabled = false;
+            _UICanvas.SetActive(false);
             Debug.Log("test2");
         }
     }

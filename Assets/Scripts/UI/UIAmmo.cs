@@ -7,10 +7,13 @@ public class UIAmmo : MonoBehaviour
 {
     [SerializeField] private Text _ammoText;
     private Player _player;
+    private Weapon _weapon;
 
     private void Start()
     {
         _player = FindObjectOfType<Player>();
+        _weapon = FindObjectOfType<Weapon>();
+
         OnAmmoUpdated();
         OnPLayerWeaponUpdated();
         _player.OnUpdateWeapon += OnPLayerWeaponUpdated;
@@ -18,7 +21,7 @@ public class UIAmmo : MonoBehaviour
     }
     private void OnAmmoUpdated()
     {
-        _ammoText.text = _player.CurrentWeapon.Ammo.ToString();
+        StartCoroutine(ReloadTimer());
     }
 
     private void OnDestroy()
@@ -30,5 +33,10 @@ public class UIAmmo : MonoBehaviour
     private void OnPLayerWeaponUpdated()
     {
         _player.CurrentWeapon.UpdateAmmo += OnAmmoUpdated;
+    }
+    private IEnumerator ReloadTimer()
+    {
+        yield return new WaitForSeconds(_weapon.ReloadTime);
+        _ammoText.text = _player.CurrentWeapon.Ammo.ToString();
     }
 }
