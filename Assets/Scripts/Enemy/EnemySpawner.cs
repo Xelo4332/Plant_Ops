@@ -71,7 +71,7 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator CompleteRoundColdown()
     {
 
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(4);
         _game.CompleteRound();
         StartCoroutine(SpawnRoutine());
     }
