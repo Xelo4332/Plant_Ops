@@ -6,8 +6,6 @@ public class SpawnerController : MonoBehaviour
 {
   
     [SerializeField] private GameObject [] _enemySpawner;
-
-
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.transform.name == "Player")

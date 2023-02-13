@@ -11,7 +11,7 @@ public class WeaponBuy : InteractibleItem
 
     private Player _player;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _player = FindObjectOfType<Player>();
         _openAnimation = GetComponent<Animator>();
