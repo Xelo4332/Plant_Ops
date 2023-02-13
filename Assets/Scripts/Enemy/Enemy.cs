@@ -13,14 +13,14 @@ public class Enemy : MonoBehaviour
     private Game _game;
     private Animator _animator;
     private Coroutine _attackRoutine;
-    private Player _player;
+    protected Player _player;
     private CrossBow _crossbow;
 
     public int _currentHealth { get; private set; }
     private AIDestinationSetter _aiSetter;
 
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _crossbow = GetComponent<CrossBow>();
         _aiSetter = GetComponent<AIDestinationSetter>();
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D col)
+    protected virtual void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Bullet"))
         {
@@ -81,12 +81,13 @@ public class Enemy : MonoBehaviour
     }
 
 
-    private void TryGetDamage()
+    protected void TryGetDamage()
     {
         _health -= _player.CurrentWeapon.Damage;
-
+        print(name);
         if (_health <= 0)
         {
+            print("igen" + name);
             //_player._score++;
             _player.UpdateScore(1);
             Instantiate(_blood, transform.position, Quaternion.identity);
