@@ -4,33 +4,23 @@ using UnityEngine;
 using System;
 
 
-public class DoorBuying : MonoBehaviour
+public class DoorBuying : InteractibleItem
 {
     [SerializeField] private Player _player;
-    [SerializeField] private int _scoreNeededToBuyDoor;
-    [SerializeField] private int _scoreRemovalAfterBuy;
+    [SerializeField] private int _price;
 
     private void Awake()
     {
         _player = FindObjectOfType<Player>();
 
     }
-
-    private void OnTriggerStay2D(Collider2D col)
+    protected override void OnPlayerInteracted()
     {
-        if (col.TryGetComponent(out Player player))
+        if (_player._score >= _price)
         {
-            if (_player._score >= _scoreNeededToBuyDoor)
-            {
-                if (Input.GetKey(KeyCode.E))
-                {
-                    this.gameObject.SetActive(false);
-                    _player.UpdateScore(-_scoreNeededToBuyDoor);
-
-  
-                    Debug.Log(_player);
-                }
-            }
+            _player.UpdateScore(-_price);
+            this.gameObject.SetActive(false);
+            Debug.Log("PlayerBuy");
         }
     }
 
