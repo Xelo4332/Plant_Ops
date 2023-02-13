@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
     private int _enemiesCount;
     private int _aliveEnemiesCount;
 
-
+    //We will find our Game script component, create new List that will have transform type, make current or active wave zero and start the spawn courtine.
     private void Start()
     {
         _game = FindObjectOfType<Game>();
@@ -21,19 +21,23 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(SpawnRoutine());
     }
 
+    //The zombies will spawn randomly. With help of random range, the script will range between 0 to the spawnSpots count depends how much spawnpoints are added.
     private Transform GetRandomSpawnSpot()
     {
         var index = Random.Range(0, _activeSpawnSpots.Count);
         return _activeSpawnSpots[index];
         
     }
-
+    //This script works same as upper, but now we will spawn random enemy types
     private Enemy GetRandomEnemy()
     {
         var index = Random.Range(0, _enemies.Length);
         return _enemies[index];
     }
 
+    //The spawncourtine that will bassicly spawn enemies in the scene. 
+    //Enemy Count will increase with multiple two. 
+    //To 
     private IEnumerator SpawnRoutine()
     {
         _enemiesCount = _game.Round * 2;
@@ -84,7 +88,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
     }
-
+    
     public void ActiveWave(int waveNumber)
     {
         ActiveSpawnPoints(waveNumber);
@@ -92,6 +96,7 @@ public class EnemySpawner : MonoBehaviour
     }
 }
 
+//New class in the class
 [System.Serializable]
 public class Wave
 {

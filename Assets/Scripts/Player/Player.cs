@@ -9,25 +9,23 @@ public class Player : MonoBehaviour
     public event Action Interact;
     public event Action OnhealthUpdate;
     public event Action OnUpdateWeapon;
+    public event Action OnScoreUpdate;
     [Range(0, 100)]
     [SerializeField] public int _health;
     [SerializeField] public int RegenerationAmount;
-    public event Action OnScoreUpdate;
     [SerializeField] private float _movementSpeed;
+    [SerializeField] private Weapon _weapon;
+    [SerializeField] private AudioClip _walkSound;
     private MovementController _movementController;
     private float _sprintSpeed = 20;
     private float _normalSpeed = 10;
     private Rigidbody2D _playerBody;
     private Camera _mainCamera;
-    [SerializeField] private Weapon _weapon;
     public CrossBow _crossBow;
-    [SerializeField] private AudioClip _walkSound;
     private Animator _anim;
     private GameObject _meleeAttackHit;
-
     public Weapon CurrentWeapon => _weapon;
     private Coroutine _regernerationRoutine;
-
     public int _score;
 
 

@@ -5,7 +5,7 @@ using Pathfinding;
 using System;
 public class Enemy : MonoBehaviour
 {
-    public GameObject _blood;
+     //Casper and Deni
     public event Action Ondie;
     [SerializeField] private int _health;
     [SerializeField] private BloodSplatter[] _bloodSplat;
@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     private Coroutine _attackRoutine;
     protected Player _player;
     private CrossBow _crossbow;
-
+    public GameObject _blood;
     public int _currentHealth { get; private set; }
     private AIDestinationSetter _aiSetter;
 
