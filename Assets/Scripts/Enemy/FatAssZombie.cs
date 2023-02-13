@@ -11,7 +11,7 @@ public class FatAssZombie : Enemy
     [SerializeField] private float _exploidingTime;
 
 
-
+    //We will override this method, get out base awake method from the enemy script and we will find our rigidbody2D.
     protected override void Awake()
     {
         base.Awake();
@@ -19,6 +19,9 @@ public class FatAssZombie : Enemy
 
     }
 
+    //Here we override the method and we will get our base method from enemy script.
+    //If player collides an object that hold player tag. Player will take Explosion damage, it will freeze the object both rotation and position.
+    //It will start an coroutine.
     protected override void OnTriggerEnter2D(Collider2D col)
     {
         base.OnTriggerEnter2D(col);
@@ -32,6 +35,7 @@ public class FatAssZombie : Enemy
         }
     }
 
+    //This is our timer when will zombie explode courtine.
     private IEnumerator ZombieExplosion()
     {
         yield return new WaitForSeconds(_exploidingTime);
@@ -39,7 +43,7 @@ public class FatAssZombie : Enemy
     }
 
   
-
+    //Bassicly here 
     private void ExpolosionCollider()
     {
         _explosioncollider.SetActive(true);

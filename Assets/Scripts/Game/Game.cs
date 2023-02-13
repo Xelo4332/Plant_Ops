@@ -6,6 +6,7 @@ using System;
 //Bassicly a event script that will send signal to our UIRound and save the current round count for the spawner script.
 public class Game : MonoBehaviour
 {
+    //Deni
     public event Action OnRoundUpdated;
     public int Round => _round;
     private int _round = 1;

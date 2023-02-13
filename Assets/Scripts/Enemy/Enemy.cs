@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     public GameObject _blood;
     public int _currentHealth { get; private set; }
     private AIDestinationSetter _aiSetter;
-
+    //Deni
     //Här får vi ut våra componenter som AIPathFinder, crossbow, etc.
     //Om vi väljer inte våra target, kommer den ge error för debug purpose
     //Vi gör att health ökas från game round script int variabel.
@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
 
         _aiSetter.target = _player.transform;
     }
-
+    //Deni
     //Damage taking from bullets, meeleehit och crossbow med hjälp av ontrigger.
     protected virtual void OnTriggerEnter2D(Collider2D col)
     {
@@ -58,6 +58,7 @@ public class Enemy : MonoBehaviour
         }
 
     }
+    //Deni
     //Har starar vi Attackcoroutine och enemy börjar så ´player när dems collider colliderar.
     private void OnCollisionEnter2D(Collision2D col)
     {
@@ -70,6 +71,7 @@ public class Enemy : MonoBehaviour
         }
 
     }
+    //Deni
     //Om player lämnar enemy collider, då kommer enemy avsluta sin attack coroutine.
     private void OnCollisionExit2D(Collision2D col)
     {
@@ -83,6 +85,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    //Deni
     //Att enemy kommer börja ta damage från player current weapon.
     //Om nemey health är mindre än 0, då updtarear player score med hjälp av event, sen skapar vi blood particle effecs, Sen invokar vi on die event, 
     // Sen skapar vi prefab blood splater, efter det förstår vi enemy gameobject.
@@ -115,7 +118,7 @@ public class Enemy : MonoBehaviour
         }
         _animator.SetTrigger("Hit");
     }
-
+    //Deni
     //Detta är attack Coroutine som kommer användas i annan method. Vi har en referens här från player trygetdamage methoden. Vi använder corutine så att enemy har en damage coldwon.
     private IEnumerator AttackRoutine()
     {
@@ -126,6 +129,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    //Deni
     //Skapar en bloodsplater prefab object. Den kommer skapa random splatter gameobject med hjälp av random range.
     private void CreateBloodSplatter()
     {
