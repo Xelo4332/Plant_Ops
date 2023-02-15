@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class HealthStim : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Player _playerHealth;
+    private bool HasHealthStim = false;
+    private void Start()
     {
-        
+        _playerHealth = FindObjectOfType<Player>();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void OnTriggerStay2D(Collider2D collision)
     {
-        
+        if(Input.GetKey(KeyCode.E) && HasHealthStim == false)
+        {
+            _playerHealth._health += 100;
+            _playerHealth.RegenerationAmount += 10;
+            HasHealthStim = true;
+        }
     }
 }

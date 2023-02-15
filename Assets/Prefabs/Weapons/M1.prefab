@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: e0de12ea31f19e742aea45244908e8c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -242,11 +242,14 @@ MonoBehaviour:
   bullet: {fileID: 8590871664740684571, guid: 07d167d5e64578a4ba491eeab970c7a4, type: 3}
   _bulletSpeed: 30
   _damage: 40
-  Firerate: 0.2
+  Firerate: 0.5
   AmmoCounter: 30
   MagSize: 8
   ChamberedMagSize: 7
   ReloadTime: 1
+  _reloadingSound: {fileID: 0}
+  _shoootingSound: {fileID: 0}
+  _muzzleFlash: {fileID: 0}
 --- !u!1 &5021064840791641516
 GameObject:
   m_ObjectHideFlags: 0

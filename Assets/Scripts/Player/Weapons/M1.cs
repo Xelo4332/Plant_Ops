@@ -4,20 +4,11 @@ using UnityEngine;
 
 public class M1 : Weapon
 {
-
-    private void Update()
+    //Deni och Roni, Arven fixade deni
+    protected override void Update()
     {
-        Timer += Time.deltaTime;
-        if (IsReloading == false)
-        {
-            if (Input.GetMouseButtonDown(0) && Timer > Firerate && AmmoCounter > 0)
-            {
-                Fire();
-                Timer = 0;
-                AmmoCounter -= 1;
-            }
-        }
+        base.Update();
 
-        Reloading();
+      
     }
 }
