@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Deni
 public class WeaponBuy : InteractibleItem
 {
     [SerializeField] private Weapon _weapon;
@@ -10,21 +10,23 @@ public class WeaponBuy : InteractibleItem
 
 
     private Player _player;
-    // Start is called before the first frame update
-    void Start()
+    //We will find Player script comment and Animator component.
+    private void Start()
     {
         _player = FindObjectOfType<Player>();
         _openAnimation = GetComponent<Animator>();
 
     }
 
-    // Update is called once per frame
+    //We will overrride the method and use the base of method the script that we innheritance from.
+
     protected override void OnTriggerEnter2D(Collider2D col)
     {
         base.OnTriggerEnter2D(col);
 
     }
 
+    //We ovveride here method too, so if play score is more than price, then we will play animation, update the score and update the weapon.
     protected override void OnPlayerInteracted()
     {
         if (_player._score >= _price)
@@ -35,7 +37,7 @@ public class WeaponBuy : InteractibleItem
         }
     }
 
-
+    //We will use base method and we will make open animation false, it means it will close.
     protected override void OnTriggerExit2D(Collider2D col)
     {
         base.OnTriggerExit2D(col);
