@@ -26,7 +26,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] protected float MagSize;
     [SerializeField] protected float ChamberedMagSize;
     [SerializeField] public float ReloadTime;
-    protected bool IsReloading;
+    public bool IsReloading;
     [SerializeField] private AudioClip _reloadingSound;
     [SerializeField] private AudioClip _shoootingSound;
     [SerializeField] private MuzzleFlash _muzzleFlash;
