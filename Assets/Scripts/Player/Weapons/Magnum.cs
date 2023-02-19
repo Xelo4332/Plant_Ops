@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class Magnum : Weapon
 {
-    protected override void Update()
+    private void Update()
     {
-        base.Update();
+        Timer += Time.deltaTime;
+        if (IsReloading == false)
+        {
+            if (Input.GetMouseButtonDown(0) && Timer > Firerate && AmmoCounter > 0)
+            {
+                Fire();
+                Timer = 0;
+                AmmoCounter -= 1;
+            }
+        }
+
+        Reloading();
     }
 
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
-{ // abdi
+{
     public AudioSource musicSource;
     public AudioSource soundEffectSource;
     public static AudioManager instance = null;
@@ -29,6 +29,7 @@ public class AudioManager : MonoBehaviour
         musicSource.clip = clip;
         musicSource.Play();
     }
+
     public void PlaySoundEffect(AudioClip clip)
     {
         soundEffectSource.clip = clip;

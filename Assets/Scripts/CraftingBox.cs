@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//WIP Deni and Sherzad
 
 public class CraftingBox : MonoBehaviour
 {

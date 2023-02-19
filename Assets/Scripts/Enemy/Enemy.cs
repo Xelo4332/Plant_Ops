@@ -1,11 +1,11 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 using System;
 public class Enemy : MonoBehaviour
 {
-     //Casper and Deni
+    public GameObject _blood;
     public event Action Ondie;
     [SerializeField] private int _health;
     [SerializeField] private BloodSplatter[] _bloodSplat;
@@ -15,14 +15,14 @@ public class Enemy : MonoBehaviour
     private Coroutine _attackRoutine;
     protected Player _player;
     private CrossBow _crossbow;
-    public GameObject _blood;
+
     public int _currentHealth { get; private set; }
     private AIDestinationSetter _aiSetter;
-    //Deni
-    //Här får vi ut våra componenter som AIPathFinder, crossbow, etc.
-    //Om vi väljer inte våra target, kommer den ge error för debug purpose
-    //Vi gör att health ökas från game round script int variabel.
-    //Vi hade problem med AI path finder, att när den var i prefab kunde den inte hitta player, därför gjorde vi läggde vi in det i awake så att när spelet startas, då enemy kommer ha target direkt.
+    //Hï¿½r fï¿½r vi ut vï¿½ra componenter som AIPathFinder, crossbow, etc.
+    //Om vi vï¿½ljer inte vï¿½ra target, kommer den ge error fï¿½r debug purpose
+    //Vi gï¿½r att health ï¿½kas frï¿½n game round script int variabel.
+    //Vi hade problem med AI path finder, att nï¿½r den var i prefab kunde den inte hitta player, dï¿½rfï¿½r gjorde vi lï¿½ggde vi in det i awake sï¿½ att nï¿½r spelet startas, dï¿½ enemy kommer ha target direkt.
+
     protected virtual void Awake()
     {
         _crossbow = GetComponent<CrossBow>();
@@ -39,8 +39,9 @@ public class Enemy : MonoBehaviour
 
         _aiSetter.target = _player.transform;
     }
-    //Deni
-    //Damage taking from bullets, meeleehit och crossbow med hjälp av ontrigger.
+
+       //Damage taking from bullets, meeleehit och crossbow med hjï¿½lp av ontrigger.
+
     protected virtual void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Bullet"))
@@ -58,8 +59,8 @@ public class Enemy : MonoBehaviour
         }
 
     }
-    //Deni
-    //Har starar vi Attackcoroutine och enemy börjar så ´player när dems collider colliderar.
+
+    //Har starar vi Attackcoroutine och enemy bï¿½rjar sï¿½ ï¿½player nï¿½r dems collider colliderar.
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.TryGetComponent(out Player player))
@@ -71,8 +72,8 @@ public class Enemy : MonoBehaviour
         }
 
     }
-    //Deni
-    //Om player lämnar enemy collider, då kommer enemy avsluta sin attack coroutine.
+
+    //Om player lï¿½mnar enemy collider, dï¿½ kommer enemy avsluta sin attack coroutine.
     private void OnCollisionExit2D(Collision2D col)
     {
         if (col.gameObject.TryGetComponent(out Player player))
@@ -85,11 +86,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    //Deni
-    //Att enemy kommer börja ta damage från player current weapon.
-    //Om nemey health är mindre än 0, då updtarear player score med hjälp av event, sen skapar vi blood particle effecs, Sen invokar vi on die event, 
-    // Sen skapar vi prefab blood splater, efter det förstår vi enemy gameobject.
-    private void EnemyTryGetDamage()
+    //Att enemy kommer bï¿½rja ta damage frï¿½n player current weapon.
+    //Om nemey health ï¿½r mindre ï¿½n 0, dï¿½ updtarear player score med hjï¿½lp av event, sen skapar vi blood particle effecs, Sen invokar vi on die event, 
+    // Sen skapar vi prefab blood splater, efter det fï¿½rstï¿½r vi enemy gameobject.
+    protected void EnemyTryGetDamage()
     {
         _health -= _player.CurrentWeapon.Damage;
         print(name);
@@ -118,8 +118,8 @@ public class Enemy : MonoBehaviour
         }
         _animator.SetTrigger("Hit");
     }
-    //Deni
-    //Detta är attack Coroutine som kommer användas i annan method. Vi har en referens här från player trygetdamage methoden. Vi använder corutine så att enemy har en damage coldwon.
+
+    //Detta ï¿½r attack Coroutine som kommer anvï¿½ndas i annan method. Vi har en referens hï¿½r frï¿½n player trygetdamage methoden. Vi anvï¿½nder corutine sï¿½ att enemy har en damage coldwon.
     private IEnumerator AttackRoutine()
     {
         while (gameObject)
@@ -129,8 +129,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    //Deni
-    //Skapar en bloodsplater prefab object. Den kommer skapa random splatter gameobject med hjälp av random range.
+    //Skapar en bloodsplater prefab object. Den kommer skapa random splatter gameobject med hjï¿½lp av random range.
     private void CreateBloodSplatter()
     {
         var index = UnityEngine.Random.Range(0, _bloodSplat.Length);

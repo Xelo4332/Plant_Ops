@@ -15,11 +15,12 @@ public class UIRoundCounter : MonoBehaviour
         _roundSettings.OnRoundUpdated += OnRoundChanged;
     }
 
-   //We will make that our text commponent will become the round counter UI display.
+    //We will make that our text commponent will become the round counter UI display.
     private void OnRoundChanged()
     {
         _textComponent.text = $" {_roundSettings.Round}";
     }
+
     //Here will unsubscribes the event.
     private void OnDestroy()
     {

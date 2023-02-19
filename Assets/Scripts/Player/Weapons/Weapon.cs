@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-//Deni and Roni worked in this script
+
 public class Weapon : MonoBehaviour
 {
     public event Action UpdateAmmo;
@@ -26,13 +26,12 @@ public class Weapon : MonoBehaviour
     [SerializeField] protected float MagSize;
     [SerializeField] protected float ChamberedMagSize;
     [SerializeField] public float ReloadTime;
-    public bool IsReloading;
+    protected bool IsReloading;
     [SerializeField] private AudioClip _reloadingSound;
     [SerializeField] private AudioClip _shoootingSound;
     [SerializeField] private MuzzleFlash _muzzleFlash;
     private AudioSource _weaponSource;
 
-    //Deni Den kommer hitta Audiosource component
     private void Start()
     {
         _weaponSource = GetComponent<AudioSource>();
@@ -43,7 +42,7 @@ public class Weapon : MonoBehaviour
     {
 
     }
-    //Deni Spawning Bullets from selected prefab and bullet has RB. Med hjälp av Event vi updaterar Ammo UI, Activerar Muzzleflash object, vi gör att audio source kommer spela shooting sound clip.
+    // Spawning Bullets with help and bullet has RB
     public void Fire()
     {
         GameObject bulletInstance = Instantiate(bullet, barrelTip.position, barrelTip.rotation);
@@ -100,7 +99,6 @@ public class Weapon : MonoBehaviour
         Reloading();
     }
 
-    //Detta för Melee script, damage script
     public void UpdateDamage(int newDamage)
     {
         _damage = newDamage;

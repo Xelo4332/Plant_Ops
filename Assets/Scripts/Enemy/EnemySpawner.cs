@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    //Deni
     [SerializeField] private Wave[] _waves;
     [SerializeField] private Enemy[] _enemies;
     [SerializeField] private float _spawnIntervals;
@@ -29,6 +28,7 @@ public class EnemySpawner : MonoBehaviour
         return _activeSpawnSpots[index];
         
     }
+
     //This script works same as upper, but now we will spawn random enemy types
     private Enemy GetRandomEnemy()
     {
@@ -89,7 +89,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
     }
-    
+
     public void ActiveWave(int waveNumber)
     {
         ActiveSpawnPoints(waveNumber);
@@ -97,7 +97,6 @@ public class EnemySpawner : MonoBehaviour
     }
 }
 
-//New class in the class
 [System.Serializable]
 public class Wave
 {

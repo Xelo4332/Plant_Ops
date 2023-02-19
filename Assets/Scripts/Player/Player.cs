@@ -5,27 +5,29 @@ using System;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
-{   //Deni and Casper
+{
     public event Action Interact;
     public event Action OnhealthUpdate;
     public event Action OnUpdateWeapon;
-    public event Action OnScoreUpdate;
     [Range(0, 100)]
     [SerializeField] public int _health;
     [SerializeField] public int RegenerationAmount;
+    public event Action OnScoreUpdate;
     [SerializeField] private float _movementSpeed;
-    [SerializeField] private Weapon _weapon;
-    [SerializeField] private AudioClip _walkSound;
     private MovementController _movementController;
     private float _sprintSpeed = 20;
     private float _normalSpeed = 10;
     private Rigidbody2D _playerBody;
     private Camera _mainCamera;
+    [SerializeField] private Weapon _weapon;
     public CrossBow _crossBow;
+    [SerializeField] private AudioClip _walkSound;
     private Animator _anim;
     private GameObject _meleeAttackHit;
+
     public Weapon CurrentWeapon => _weapon;
     private Coroutine _regernerationRoutine;
+
     public int _score;
 
 
@@ -33,7 +35,6 @@ public class Player : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
-    //Here we will find all of our components that needed.
     private void Awake()
     {
         _playerBody = GetComponent<Rigidbody2D>();
@@ -54,10 +55,6 @@ public class Player : MonoBehaviour
         {
             Quit();
         }
-        //Deni
-        //Here we will activate our GetMouseWold postion method, intreacthandler and play our walking sound.
-        //For the walking sound we had a issue that it played to fast to hear. I decided to make a trick.
-        //It will first play first sound that it will loop. It means that we will hear the walking sound and it will not loop to fast.
         _movementController.Rotate(GetMouseWorldPosition());
         InteractHandle();
 
@@ -98,12 +95,10 @@ public class Player : MonoBehaviour
         {
 
         }
-        //Deni Here we will activate our move method for movement and sprint
         _movementController.Move(_movementSpeed);
         Sprint();
     }
 
-    //Try get damage method that will make that player could take a damage. It wil reload the scene if player dies. Here we will activate regen method and invoke Onhealth event.
     public void TryGetDamage(int damage)
     {
         _health -= damage;
@@ -114,7 +109,7 @@ public class Player : MonoBehaviour
         StartRegeneration();
         OnhealthUpdate?.Invoke();
     }
-    //An simple sprint method.
+
     private void Sprint()
     {
         if (Input.GetKey(KeyCode.LeftShift))
@@ -129,7 +124,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    //Here we will start our courtine that will regen player helath.
+
     private void StartRegeneration()
     {
         if (_regernerationRoutine != null)
@@ -139,9 +134,7 @@ public class Player : MonoBehaviour
         }
         _regernerationRoutine = StartCoroutine(RegernerationRoutine());
     }
-    
-    //A regen couretine, if three second coldown has ended, it was start while kiio and start adding health to player.
-    // we will invoke our Onhealth event.
+
     private IEnumerator RegernerationRoutine()
     {
         yield return new WaitForSeconds(3);
@@ -152,7 +145,7 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
     }
-    //This is going to be our base for the item intreaction that we will refrense in other scripts.
+
     private void InteractHandle()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -161,8 +154,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    //Here's method that will be used to change weapon if you buý a weapon or intract with the mustery box. 
-    //It will destroy current gun object, get the new one from the prefabs, and invoke OnUpdate event.
     public void UpdateWeapon(Weapon newWeapon)
     {
         if (_weapon != newWeapon)
@@ -172,7 +163,7 @@ public class Player : MonoBehaviour
             OnUpdateWeapon?.Invoke();
         }
     }
-    //This is to update player score and Invoke Onscore event.
+
     public void UpdateScore(int score)
     {
         _score += score;
