@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField] public int _health;
     [SerializeField] public int RegenerationAmount;
     public event Action OnScoreUpdate;
+    public event Action OnMaterialUpdate;
     [SerializeField] private float _movementSpeed;
     private MovementController _movementController;
     private float _sprintSpeed = 20;
@@ -24,6 +25,8 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip _walkSound;
     private Animator _anim;
     private GameObject _meleeAttackHit;
+    [SerializeField] private int _craftMaterial;
+    public int Material => _craftMaterial;
 
     public Weapon CurrentWeapon => _weapon;
     private Coroutine _regernerationRoutine;
@@ -38,7 +41,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         _playerBody = GetComponent<Rigidbody2D>();
-        _crossBow = GetComponent<CrossBow>();
+
         _anim = GetComponent<Animator>();
         _movementController = new MovementController(_playerBody, _anim);
         _mainCamera = Camera.main;
@@ -72,6 +75,11 @@ public class Player : MonoBehaviour
             {
                 AudioManager.instance.ClearSoundEffect();
             }
+        }
+
+        if (_crossBow != null)
+        {
+            _crossBow.CrossBowAttack();
         }
 
     }
@@ -168,6 +176,18 @@ public class Player : MonoBehaviour
     {
         _score += score;
         OnScoreUpdate?.Invoke();
+    }
+
+    public void UpdateMaterials(int count)
+    {
+        _craftMaterial += count;
+        OnMaterialUpdate?.Invoke();
+    }
+
+    public void CrossBowActive()
+    {
+        Debug.Log("CrossBow");
+        _crossBow = FindObjectOfType<CrossBow>();
     }
 
 }

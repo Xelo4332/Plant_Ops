@@ -7,7 +7,7 @@ public class MeleeAttackScript : MonoBehaviour
 
     //Kacper
     [SerializeField] private  GameObject _meleeAttackHit;
-    [SerializeField] public int _meleeDamage = 3;
+    [SerializeField] public int _meleeDamage;
     private Player _player;
 
     //We'll find Player component

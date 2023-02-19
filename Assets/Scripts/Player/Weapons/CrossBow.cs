@@ -11,21 +11,16 @@ public class CrossBow : MonoBehaviour
 
 
     [SerializeField] private float _boltSpeed;
-    [SerializeField] public int _boltDamage = 3;
+    [SerializeField] private int _boltDamage = 3;
+    public int BoltDamage => _boltDamage;
 
     private Player _player;
-    private Enemy _enemy;
     // Start is called before the first frame update
     void Start()
     {
         _player = GetComponent<Player>();
-        _enemy = GetComponent<Enemy>();
     }
 
-    private void Update()
-    {
-        CrossBowAttack();
-    }
     private void CrossBowAction()
     {
         GameObject boltInstance = Instantiate(bolt, barrelTip.position, barrelTip.rotation);
@@ -33,10 +28,10 @@ public class CrossBow : MonoBehaviour
         Destroy(boltInstance, 5);
     }
 
-    private void CrossBowAttack()
+    public void CrossBowAttack()
     {
 
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.C))
         {
 
             CrossBowAction();

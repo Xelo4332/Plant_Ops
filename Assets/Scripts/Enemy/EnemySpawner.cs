@@ -37,8 +37,10 @@ public class EnemySpawner : MonoBehaviour
     }
 
     //The spawncourtine that will bassicly spawn enemies in the scene. 
-    //Enemy Count will increase with multiple two. 
-    //To 
+    //Enemy Count will increase with game round mutliple with 2.
+    //We counting how much enemies are current alive.
+    //While enemies are more than 0, they will spawn.
+    //Everytime enemy spawn it will remove enemy count to know how much enemies left.
     private IEnumerator SpawnRoutine()
     {
         _enemiesCount = _game.Round * 2;
@@ -52,7 +54,10 @@ public class EnemySpawner : MonoBehaviour
         yield return new WaitForSeconds(10);
 
     }
-
+    //Here we will get randomspawnspot
+    //Here we will get too random enemy type to spawn
+    //Here is the core method to spawn the enemy
+    //Every enemy has event ondie to know did enemy die or not so we will start to know when new round to be started.
     private void SpawnEnemy()
     {
         var spawnPoint = GetRandomSpawnSpot();
@@ -62,6 +67,7 @@ public class EnemySpawner : MonoBehaviour
        
     }
 
+    //Here we will check if all enemies are dead  to start round coldown and start new round.
     private void OnEnemyDie()
     {
         _aliveEnemiesCount--;
@@ -72,7 +78,7 @@ public class EnemySpawner : MonoBehaviour
 
         }
     }
-
+    //Here is coldown for the spawner and comple round activator method.
     private IEnumerator CompleteRoundColdown()
     {
 
@@ -80,7 +86,7 @@ public class EnemySpawner : MonoBehaviour
         _game.CompleteRound();
         StartCoroutine(SpawnRoutine());
     }
-
+    //We use this method for activation all spawnspots in current wave.
     private void ActiveSpawnPoints(int waveNumber)
     {
         foreach (Transform spawnSpots in _waves[waveNumber].spawnSpots)
@@ -89,7 +95,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
     }
-
+    //Here we will activate our waves from our list.
     public void ActiveWave(int waveNumber)
     {
         ActiveSpawnPoints(waveNumber);
@@ -100,6 +106,7 @@ public class EnemySpawner : MonoBehaviour
 [System.Serializable]
 public class Wave
 {
+    //We will use to divide spawnspots to needed wave number.
     public Transform[] spawnSpots;
 }
 

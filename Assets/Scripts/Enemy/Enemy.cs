@@ -46,16 +46,16 @@ public class Enemy : MonoBehaviour
     {
         if (col.CompareTag("Bullet"))
         {
-            EnemyTryGetDamage();
+            EnemyTryGetDamage(_player.CurrentWeapon.Damage);
             Destroy(col.gameObject);
         }
         if (col.CompareTag("MeleeHit"))
         {
-            EnemyTryGetDamage();
+            EnemyTryGetDamage(_player.CurrentWeapon.Damage);
         }
         if (col.CompareTag("Bolt"))
         {
-            TryGetDamageCrossbow();
+            EnemyTryGetDamage(_player._crossBow.BoltDamage);
         }
 
     }
@@ -89,10 +89,10 @@ public class Enemy : MonoBehaviour
     //Att enemy kommer b�rja ta damage fr�n player current weapon.
     //Om nemey health �r mindre �n 0, d� updtarear player score med hj�lp av event, sen skapar vi blood particle effecs, Sen invokar vi on die event, 
     // Sen skapar vi prefab blood splater, efter det f�rst�r vi enemy gameobject.
-    protected void EnemyTryGetDamage()
+    protected void EnemyTryGetDamage(int damage)
     {
-        _health -= _player.CurrentWeapon.Damage;
-        print(name);
+        _health -= damage;
+        
         if (_health <= 0)
         {
             print("igen" + name);
@@ -106,18 +106,7 @@ public class Enemy : MonoBehaviour
         //_animator.SetTrigger("Hit");
     }
 
-    private void TryGetDamageCrossbow()
-    {
-        _health -= _player._crossBow._boltDamage;
-
-        if (_health <= 0)
-        {
-            _player._score++;
-            Ondie?.Invoke();
-            Destroy(gameObject);
-        }
-        _animator.SetTrigger("Hit");
-    }
+   
 
     //Detta �r attack Coroutine som kommer anv�ndas i annan method. Vi har en referens h�r fr�n player trygetdamage methoden. Vi anv�nder corutine s� att enemy har en damage coldwon.
     private IEnumerator AttackRoutine()
