@@ -11,14 +11,14 @@ public class FatAssZombie : Enemy
     [SerializeField] private float _exploidingTime;
 
 
-
+    //Here we will override our awake method to get our Rigidbody component.
     protected override void Awake()
     {
         base.Awake();
         _enemyBody = GetComponent<Rigidbody2D>();
 
     }
-
+    //If play enter enemy explosion collider, enemy will freeze, deal damage and start explosion courtine.
     protected override void OnTriggerEnter2D(Collider2D col)
     {
         base.OnTriggerEnter2D(col);
@@ -31,7 +31,7 @@ public class FatAssZombie : Enemy
 
         }
     }
-
+    //Here we will set our timer when zombie will expload.
     private IEnumerator ZombieExplosion()
     {
         yield return new WaitForSeconds(_exploidingTime);
@@ -39,7 +39,7 @@ public class FatAssZombie : Enemy
     }
 
   
-
+    //Here we will turn on collider and destory player object after few miliseconds.
     private void ExpolosionCollider()
     {
         _explosioncollider.SetActive(true);
