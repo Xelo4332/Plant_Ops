@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    //Deni and Casper
     public event Action Interact;
     public event Action OnhealthUpdate;
     public event Action OnUpdateWeapon;
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField] public int _health;
     [SerializeField] public int RegenerationAmount;
     public event Action OnScoreUpdate;
+    public event Action OnMaterialUpdate;
     [SerializeField] private float _movementSpeed;
     private MovementController _movementController;
     private float _sprintSpeed = 20;
@@ -24,6 +26,8 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip _walkSound;
     private Animator _anim;
     private GameObject _meleeAttackHit;
+    [SerializeField] private int _craftMaterial;
+    public int Material => _craftMaterial;
 
     public Weapon CurrentWeapon => _weapon;
     private Coroutine _regernerationRoutine;
@@ -35,10 +39,12 @@ public class Player : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
+
+    //Here we will find all of our components that needed.
     private void Awake()
     {
         _playerBody = GetComponent<Rigidbody2D>();
-        _crossBow = GetComponent<CrossBow>();
+
         _anim = GetComponent<Animator>();
         _movementController = new MovementController(_playerBody, _anim);
         _mainCamera = Camera.main;
@@ -48,7 +54,10 @@ public class Player : MonoBehaviour
 
     }
 
-
+    //Deni
+    //Here we will activate our GetMouseWold postion method, intreacthandler and play our walking sound.
+    //For the walking sound we had a issue that it played to fast to hear. I decided to make a trick.
+    //It will first play first sound that it will loop. It means that we will hear the walking sound and it will not loop to fast.
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.M))
@@ -74,11 +83,16 @@ public class Player : MonoBehaviour
             }
         }
 
+        if (_crossBow != null)
+        {
+            _crossBow.CrossBowAttack();
+        }
+
     }
 
-    //Med hjälp av Vector 2, vi kan hitta våran mus position som är också en  input. Våran karaktär kommer fokursa på mus hela tiden.
-    //Vi ska inte glömma att använda normalized så att vectorer har samma poistionen;
-    //Som ni kan see våran method är Vector 2. Därför behöver vi returna tillbaks direction värde.
+    //Med hjÃ¤lp av Vector 2, vi kan hitta vÃ¥ran mus position som Ã¤r ocksÃ¥ en  input. VÃ¥ran karaktÃ¤r kommer fokursa pÃ¥ mus hela tiden.
+    //Vi ska inte glÃ¶mma att anvÃ¤nda normalized sÃ¥ att vectorer har samma poistionen;
+    //Som ni kan see vÃ¥ran method Ã¤r Vector 2. DÃ¤rfÃ¶r behÃ¶ver vi returna tillbaks direction vÃ¤rde.
     private Vector2 GetMouseWorldPosition()
     {
         Vector3 mousePos = Input.mousePosition;
@@ -99,6 +113,7 @@ public class Player : MonoBehaviour
         Sprint();
     }
 
+    //Try get damage method that will make that player could take a damage. It wil reload the scene if player dies. Here we will activate regen method and invoke Onhealth event.
     public void TryGetDamage(int damage)
     {
         _health -= damage;
@@ -124,7 +139,7 @@ public class Player : MonoBehaviour
         }
     }
 
-
+    //Here we will start our courtine that will regen player helath.
     private void StartRegeneration()
     {
         if (_regernerationRoutine != null)
@@ -135,6 +150,8 @@ public class Player : MonoBehaviour
         _regernerationRoutine = StartCoroutine(RegernerationRoutine());
     }
 
+    //A regen couretine, if three second coldown has ended, it was start while kiio and start adding health to player.
+    // we will invoke our Onhealth event.
     private IEnumerator RegernerationRoutine()
     {
         yield return new WaitForSeconds(3);
@@ -146,6 +163,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    //This is going to be our base for the item intreaction that we will refrense in other scripts.
     private void InteractHandle()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -153,7 +171,8 @@ public class Player : MonoBehaviour
             Interact?.Invoke();
         }
     }
-
+    //Here's method that will be used to change weapon if you buï¿½ a weapon or intract with the mustery box. 
+    //It will destroy current gun object, get the new one from the prefabs, and invoke OnUpdate event.
     public void UpdateWeapon(Weapon newWeapon)
     {
         if (_weapon != newWeapon)
@@ -164,10 +183,24 @@ public class Player : MonoBehaviour
         }
     }
 
+    //This is to update player score and Invoke Onscore event.
     public void UpdateScore(int score)
     {
         _score += score;
         OnScoreUpdate?.Invoke();
+    }
+
+
+    public void UpdateMaterials(int count)
+    {
+        _craftMaterial += count;
+        OnMaterialUpdate?.Invoke();
+    }
+
+    public void CrossBowActive()
+    {
+        Debug.Log("CrossBow");
+        _crossBow = FindObjectOfType<CrossBow>();
     }
 
 }

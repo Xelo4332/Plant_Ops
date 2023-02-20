@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class CraftMaterial : InteractibleItem
 {
+    private Player _player;
+    private void Start()
+    {
+        _player = FindObjectOfType<Player>();
+    }
+
     protected override void OnPlayerInteracted()
     {
-        Debug.Log("Player Intract with" + this.name);
+        _player.UpdateMaterials(1);
+        Destroy(gameObject);
     }
 }

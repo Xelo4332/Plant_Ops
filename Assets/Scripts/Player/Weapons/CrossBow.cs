@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrossBow : MonoBehaviour
+public class CrossBow : MonoBehaviour // -kacper
 {
     [SerializeField] private Transform barrelTip;
 
@@ -11,32 +11,27 @@ public class CrossBow : MonoBehaviour
 
 
     [SerializeField] private float _boltSpeed;
-    [SerializeField] public int _boltDamage = 3;
+    [SerializeField] private int _boltDamage = 3;
+    public int BoltDamage => _boltDamage;
 
     private Player _player;
-    private Enemy _enemy;
     // Start is called before the first frame update
     void Start()
     {
         _player = GetComponent<Player>();
-        _enemy = GetComponent<Enemy>();
     }
 
-    private void Update()
-    {
-        CrossBowAttack();
-    }
     private void CrossBowAction()
     {
-        GameObject boltInstance = Instantiate(bolt, barrelTip.position, barrelTip.rotation);
-        boltInstance.GetComponent<Rigidbody2D>().velocity = barrelTip.up * _boltSpeed;
+        GameObject boltInstance = Instantiate(bolt, barrelTip.position, barrelTip.rotation); 
+        boltInstance.GetComponent<Rigidbody2D>().velocity = barrelTip.up * _boltSpeed; // spawns bolt at the "barrelTip" position
         Destroy(boltInstance, 5);
     }
 
-    private void CrossBowAttack()
+    public void CrossBowAttack()
     {
 
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.C)) // when "c" is pressed then the "CrossBowAction" method activates
         {
 
             CrossBowAction();
@@ -46,7 +41,5 @@ public class CrossBow : MonoBehaviour
 
 
     }
-
-    // Update is called once per frame
 
 }

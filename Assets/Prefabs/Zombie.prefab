@@ -152,6 +152,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _blood: {fileID: 3939828348241163975, guid: 2fd2d56972a68de4ab2f8e77d621c724, type: 3}
   _health: 100
+  _bloodSplat:
+  - {fileID: 5414573573822239572, guid: fbe5bb251eecc8345b9d60ada1086d7a, type: 3}
+  - {fileID: 5414573573822239572, guid: 230af83b396a68941a4e9b3ead30da99, type: 3}
   _damage: 20
 --- !u!50 &5925312221954963939
 Rigidbody2D:

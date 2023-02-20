@@ -2,24 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CraftingBox : MonoBehaviour
+public class CraftingBox : InteractibleItem
 {
-    private Player _player;
-    private InteractibleItems _items;
+    [SerializeField] private UICrafting _uiCrafting;
 
-    private void Awake()
+    //Here we will set ui crafting gameobject true when we interact with crafting table.
+    protected override void OnPlayerInteracted()
     {
-        _player = FindObjectOfType<Player>();
-        _items = FindObjectOfType<InteractibleItems>();
+        base.OnPlayerInteracted();
+        _uiCrafting.gameObject.SetActive(true);
     }
-
-    private void OnCollisionStay2D(Collision2D col)
+    //If we will exit from collider area, then UI crafting screen will turn off.
+    protected override void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.transform.name == "Player" && Input.GetKeyDown(KeyCode.E))
-            if (_items._craftableItems >= 25)
-            {
-
-            }
+        base.OnTriggerExit2D(col);
+        if (col.TryGetComponent(out Player player))
+        {
+            _uiCrafting.gameObject.SetActive(false);
+        }
     }
 
 

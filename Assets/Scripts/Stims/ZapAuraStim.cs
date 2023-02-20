@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class ZapAuraStim : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool HasZapAura = false;
+    [SerializeField]
+    private GameObject Zap;
+    public Weapon IsReloading;
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+        if (HasZapAura == true && IsReloading && Input.GetKeyDown(KeyCode.E))
+        {
+            Destroy(Instantiate(Zap, transform.position, Quaternion.identity), 1);
+        }
     }
 }
