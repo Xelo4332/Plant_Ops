@@ -9,7 +9,15 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        Destroy(_bullets, Time);
+        Destroy(gameObject, Time);
+    }
+
+    private void OnColliderEnter2D(Collider2D col)
+    {
+        if(col.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
     }
 
 }
