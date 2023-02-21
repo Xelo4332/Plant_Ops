@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     public int _score;
 
 
-    public void Quit()
+    public void Quit() // when quit is envoked then the scene goeas back by one - Kacper
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour // pause
+public class PauseMenu : MonoBehaviour // Kacper
 {
     public static bool GameIsPaused = false;
     public GameObject _mainUI;

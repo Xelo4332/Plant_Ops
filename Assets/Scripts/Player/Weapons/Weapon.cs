@@ -38,10 +38,7 @@ public class Weapon : MonoBehaviour
     }
 
 
-    public void CrossBowAction()
-    {
-
-    }
+    
     // Spawning Bullets with help and bullet has RB
     public void Fire()
     {
