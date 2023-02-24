@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class MovementController 
 {
+    //Deni
     private readonly Rigidbody2D _playerBody;
     public Vector2 MoveDirection => _movementDirection;
     private Vector2 _movementDirection;

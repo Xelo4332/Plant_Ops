@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnerActivator : MonoBehaviour
 {
+    //Deni
     [SerializeField] private int _waveNumber;
     private EnemySpawner _spawner;
 

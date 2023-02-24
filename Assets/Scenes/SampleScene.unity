@@ -1152,6 +1152,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3623475776426264067, guid: 6dcc403663994624eac62682c0c42e50, type: 3}
+      propertyPath: m_Radius
+      value: 1.4026489
+      objectReference: {fileID: 0}
+    - target: {fileID: 3623475776426264067, guid: 6dcc403663994624eac62682c0c42e50, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.025763512
+      objectReference: {fileID: 0}
     - target: {fileID: 3623475776426264089, guid: 6dcc403663994624eac62682c0c42e50, type: 3}
       propertyPath: m_Name
       value: ZombieFatAss
@@ -1446,8 +1454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
-  _scoreNeededToBuyDoor: 20
-  _scoreRemovalAfterBuy: 20
+  _price: 0
 --- !u!61 &784125922
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1602,29 +1609,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1019374199 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3623475776426264089, guid: 6dcc403663994624eac62682c0c42e50, type: 3}
-  m_PrefabInstance: {fileID: 654313576}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1019374200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019374199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a28462d47b028154db576e2b8d12ffd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _blood: {fileID: 3939828348241163975, guid: 2fd2d56972a68de4ab2f8e77d621c724, type: 3}
-  _health: 300
-  _bloodSplat:
-  - {fileID: 5414573573822239572, guid: 230af83b396a68941a4e9b3ead30da99, type: 3}
-  _damage: 20
-  _explosioncollider: {fileID: 0}
 --- !u!4 &1019374206 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3623475776426264094, guid: 6dcc403663994624eac62682c0c42e50, type: 3}
@@ -2568,6 +2552,7 @@ MonoBehaviour:
   _weapon: {fileID: 1743657662}
   _crossBow: {fileID: 0}
   _walkSound: {fileID: 8300000, guid: 26c0b03be7e7dfb448654171b8f77809, type: 3}
+  _craftMaterial: 0
   _score: 0
 --- !u!114 &1000607491335343216
 MonoBehaviour:

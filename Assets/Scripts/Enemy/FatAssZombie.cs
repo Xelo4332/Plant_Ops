@@ -1,49 +1,64 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class FatAssZombie : Enemy
+    //Deni
 {
-    private ParticleSystem _expolosionEffects;
-    private Rigidbody2D _enemyBody;
-    [SerializeField] private GameObject _explosioncollider;
+    [SerializeField] private ParticleSystem _explosionEffects;
     [SerializeField] private int _explosionDamage;
-    [SerializeField] private float _exploidingTime;
-
+    [SerializeField] private float _delayExplosion;
+    [SerializeField] private float _explosionDistance;
+    private Rigidbody2D _enemyBody;
+    private AIDestinationSetter _destinationSetter;
 
     //Here we will override our awake method to get our Rigidbody component.
     protected override void Awake()
     {
         base.Awake();
         _enemyBody = GetComponent<Rigidbody2D>();
+        _destinationSetter = GetComponent<AIDestinationSetter>();
 
     }
-    //If play enter enemy explosion collider, enemy will freeze, deal damage and start explosion courtine.
-    protected override void OnTriggerEnter2D(Collider2D col)
+    //If enemy collider with player, it will turn off dessetter script, make rigidbody to static, freeze rotation and start expolosion courtine.
+    protected override void OnCollisionEnter2D(Collision2D col)
     {
-        base.OnTriggerEnter2D(col);
-        if (col.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Player"))
         {
-            _player.TryGetDamage(_explosionDamage);
-            _enemyBody.constraints = RigidbodyConstraints2D.FreezePosition;
+            _destinationSetter.enabled = false;
+            _enemyBody.bodyType = RigidbodyType2D.Static;
             _enemyBody.constraints = RigidbodyConstraints2D.FreezeRotation;
             StartCoroutine(ZombieExplosion());
 
         }
     }
-    //Here we will set our timer when zombie will expload.
+    //Here will we have our Explosion delay and a simple checker to play couldn't activate it twice.
     private IEnumerator ZombieExplosion()
     {
-        yield return new WaitForSeconds(_exploidingTime);
-        ExpolosionCollider();
+        yield return new WaitForSeconds(_delayExplosion);
+        if (gameObject)
+        {
+            Expolode();
+        }
+  
+
     }
 
-  
-    //Here we will turn on collider and destory player object after few miliseconds.
-    private void ExpolosionCollider()
+   
+    //Här kommer vi räkna ut distancen med hjälp av Vector 2 distance method som tillåter använda distancer istället för att skapa collider. 
+    //Vi sätter en distans, om distans är större distans vi har skriven in, då kommer activeras method tryget damage.
+    //Vi kommer också spawna particlar från våra prefabs och förstöra själva våran zombie objekten.
+    private void Expolode()
     {
-        _explosioncollider.SetActive(true);
-        Destroy(gameObject, 0.1f);
+        if (Vector2.Distance(transform.position, _player.transform.position) < _explosionDistance)
+        {
+            _player.TryGetDamage(_explosionDamage);
+
+        }
+        Instantiate(_explosionEffects, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+        
 
     }
 }

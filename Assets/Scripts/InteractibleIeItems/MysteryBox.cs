@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class MysteryBox : InteractibleItem
 {
+    //Deni
     [SerializeField] private Weapon[] _weaponsDrop;
-    private Player _player;
     [SerializeField] private int _price;
+    private Player _player;
+
 
     //We will find our player script here
     private void Start()

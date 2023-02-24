@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    //Deni
     [SerializeField] private Wave[] _waves;
     [SerializeField] private Enemy[] _enemies;
     [SerializeField] private float _spawnIntervals;

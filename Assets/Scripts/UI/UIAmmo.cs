@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UIAmmo : MonoBehaviour
 {
+    //Deni
     [SerializeField] private Text _ammoText;
     private Player _player;
     private Weapon _weapon;

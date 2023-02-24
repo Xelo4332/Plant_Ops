@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UIPlayerScoreCounter : MonoBehaviour
 {
+    //Deni
     [SerializeField] private Text _textComponent;
     private Player _playerScore;
 

@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Deni
 public class WeaponBuy : InteractibleItem
 {
+    //Deni
     [SerializeField] private Weapon _weapon;
     [SerializeField] private int _price;
     private Animator _openAnimation;
