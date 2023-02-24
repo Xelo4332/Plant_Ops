@@ -6,6 +6,7 @@ using System;
 
 public class DoorBuying : InteractibleItem
 {
+    //Deni
     [SerializeField] private Player _player;
     [SerializeField] private int _price;
 

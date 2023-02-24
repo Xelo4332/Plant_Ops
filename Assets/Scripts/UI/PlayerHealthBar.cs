@@ -6,6 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class PlayerHealthBar : MonoBehaviour
 {
+    //Deni
     private Player _player;
     private Image _image;
 

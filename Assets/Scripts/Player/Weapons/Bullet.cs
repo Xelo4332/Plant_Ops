@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    //Sherzad
     [SerializeField] private GameObject _bullets;
     [SerializeField] private float Time;
-
+    //Kommer förstöra skottet beror på när tider går ut.
     private void Update()
     {
         Destroy(gameObject, Time);
     }
-
-    private void OnColliderEnter2D(Collider2D col)
+    //Om skotten träffar något objekt, då kommer den automatisk förstöra den
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.CompareTag("Wall"))
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 
 }

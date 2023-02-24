@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Deni
 public class CraftingBox : InteractibleItem
 {
     [SerializeField] private UICrafting _uiCrafting;

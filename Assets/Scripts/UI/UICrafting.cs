@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UICrafting : MonoBehaviour
 {
+    //Deni
     private Player _player;
     private bool _isCrafted;
 

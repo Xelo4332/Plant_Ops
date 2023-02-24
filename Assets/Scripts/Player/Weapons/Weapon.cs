@@ -6,19 +6,12 @@ using System;
 public class Weapon : MonoBehaviour
 {
     public event Action UpdateAmmo;
-
-    [SerializeField]
-    private Transform barrelTip;
-
-
-    [SerializeField]
-    private GameObject bullet;
+    [SerializeField]private Transform barrelTip;
+    [SerializeField] private GameObject bullet;
     [SerializeField] private float _bulletSpeed;
     [SerializeField] private int _damage;
     public int Damage => _damage;
     public float Ammo => AmmoCounter;
-
-
     protected float Timer;
     public float Firerate = 0.1f;
 
@@ -39,7 +32,8 @@ public class Weapon : MonoBehaviour
 
 
     
-    // Spawning Bullets with help and bullet has RB
+    // Spawning Bullets with help and bullet has RB Deni and Roni
+    //Here we will invoke our event, activate our muzzleflash gameobject and play shooting sound. //Deni
     public void Fire()
     {
         GameObject bulletInstance = Instantiate(bullet, barrelTip.position, barrelTip.rotation);
@@ -95,7 +89,7 @@ public class Weapon : MonoBehaviour
         }
         Reloading();
     }
-
+    //Deni, this for our meelee damage script. Deni
     public void UpdateDamage(int newDamage)
     {
         _damage = newDamage;

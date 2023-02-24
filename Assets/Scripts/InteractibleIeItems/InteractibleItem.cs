@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InteractibleItem : MonoBehaviour
 {
+    //Deni
       //We will create here a virtual method so we could override it in other scripts.
     //In this method we will subscribe an event if a object collides with a player and will have this script or inheritance it to other script.
     protected virtual void OnTriggerEnter2D(Collider2D col)

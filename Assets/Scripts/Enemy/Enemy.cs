@@ -4,18 +4,17 @@ using UnityEngine;
 using Pathfinding;
 using System;
 public class Enemy : MonoBehaviour
-{
-    public GameObject _blood;
+{   //Deni
+   
     public event Action Ondie;
     [SerializeField] private int _health;
     [SerializeField] private BloodSplatter[] _bloodSplat;
     [SerializeField] private int _damage;
+    [SerializeField]private Animator _animator;
     private Game _game;
-    private Animator _animator;
     private Coroutine _attackRoutine;
     protected Player _player;
-    private CrossBow _crossbow;
-
+    public GameObject _blood;
     public int _currentHealth { get; private set; }
     private AIDestinationSetter _aiSetter;
     //H�r f�r vi ut v�ra componenter som AIPathFinder, crossbow, etc.
@@ -25,9 +24,9 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Awake()
     {
-        _crossbow = GetComponent<CrossBow>();
+     
         _aiSetter = GetComponent<AIDestinationSetter>();
-        _animator = GetComponent<Animator>();
+   
         _player = FindObjectOfType<Player>();
         if (_player == null)
         {
@@ -61,7 +60,7 @@ public class Enemy : MonoBehaviour
     }
 
     //Har starar vi Attackcoroutine och enemy b�rjar s� �player n�r dems collider colliderar.
-    private void OnCollisionEnter2D(Collision2D col)
+    protected virtual void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.TryGetComponent(out Player player))
         {
@@ -103,7 +102,7 @@ public class Enemy : MonoBehaviour
             CreateBloodSplatter();
             Destroy(gameObject);
         }
-        //_animator.SetTrigger("Hit");
+        _animator.SetTrigger("Hit");
     }
 
    

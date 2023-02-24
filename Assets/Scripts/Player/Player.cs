@@ -10,29 +10,31 @@ public class Player : MonoBehaviour
     public event Action Interact;
     public event Action OnhealthUpdate;
     public event Action OnUpdateWeapon;
+    public event Action OnScoreUpdate;
+    public event Action OnMaterialUpdate;
     [Range(0, 100)]
     [SerializeField] public int _health;
     [SerializeField] public int RegenerationAmount;
-    public event Action OnScoreUpdate;
-    public event Action OnMaterialUpdate;
     [SerializeField] private float _movementSpeed;
+    [SerializeField] private int _craftMaterial;
+    [SerializeField] private Weapon _weapon;
+
     private MovementController _movementController;
     private float _sprintSpeed = 20;
     private float _normalSpeed = 10;
     private Rigidbody2D _playerBody;
     private Camera _mainCamera;
-    [SerializeField] private Weapon _weapon;
     public CrossBow _crossBow;
     [SerializeField] private AudioClip _walkSound;
     private Animator _anim;
     private GameObject _meleeAttackHit;
-    [SerializeField] private int _craftMaterial;
+
     public int Material => _craftMaterial;
 
     public Weapon CurrentWeapon => _weapon;
     private Coroutine _regernerationRoutine;
 
-    public int _score;
+    public int _score; 
 
 
     public void Quit() // when quit is envoked then the scene goeas back by one - Kacper
@@ -40,7 +42,7 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
-    //Here we will find all of our components that needed.
+    //Here we will find all of our components that needed. //Deni
     private void Awake()
     {
         _playerBody = GetComponent<Rigidbody2D>();
@@ -92,7 +94,7 @@ public class Player : MonoBehaviour
 
     //Med hjälp av Vector 2, vi kan hitta våran mus position som är också en  input. Våran karaktär kommer fokursa på mus hela tiden.
     //Vi ska inte glömma att använda normalized så att vectorer har samma poistionen;
-    //Som ni kan see våran method är Vector 2. Därför behöver vi returna tillbaks direction värde.
+    //Som ni kan see våran method är Vector 2. Därför behöver vi returna tillbaks direction värde. //Deni
     private Vector2 GetMouseWorldPosition()
     {
         Vector3 mousePos = Input.mousePosition;
@@ -103,6 +105,7 @@ public class Player : MonoBehaviour
         return direction;
     }
 
+    //Here we will activate and refrens our move method from movement controller and here we will activate sprint method.
     private void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.M))
@@ -113,18 +116,19 @@ public class Player : MonoBehaviour
         Sprint();
     }
 
-    //Try get damage method that will make that player could take a damage. It wil reload the scene if player dies. Here we will activate regen method and invoke Onhealth event.
+    //Deni
+    //Try get damage method that will make that player could take a damage. It wil reload the scene if player dies. Here we will activate regen method and invoke Onhealth event. 
     public void TryGetDamage(int damage)
     {
         _health -= damage;
         if (_health <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            _anim.SetBool("Dead", true);
         }
         StartRegeneration();
         OnhealthUpdate?.Invoke();
     }
-
+    //Here is our sprint method that will increase our player speed and activate sprint animation. //Deni
     private void Sprint()
     {
         if (Input.GetKey(KeyCode.LeftShift))
@@ -138,7 +142,7 @@ public class Player : MonoBehaviour
             _anim.SetBool("Sprinting", false);
         }
     }
-
+    //Deni
     //Here we will start our courtine that will regen player helath.
     private void StartRegeneration()
     {
@@ -152,6 +156,7 @@ public class Player : MonoBehaviour
 
     //A regen couretine, if three second coldown has ended, it was start while kiio and start adding health to player.
     // we will invoke our Onhealth event.
+    //Deni
     private IEnumerator RegernerationRoutine()
     {
         yield return new WaitForSeconds(3);
@@ -164,6 +169,7 @@ public class Player : MonoBehaviour
     }
 
     //This is going to be our base for the item intreaction that we will refrense in other scripts.
+    //Deni
     private void InteractHandle()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -171,6 +177,7 @@ public class Player : MonoBehaviour
             Interact?.Invoke();
         }
     }
+    //Deni
     //Here's method that will be used to change weapon if you bu� a weapon or intract with the mustery box. 
     //It will destroy current gun object, get the new one from the prefabs, and invoke OnUpdate event.
     public void UpdateWeapon(Weapon newWeapon)
@@ -184,19 +191,21 @@ public class Player : MonoBehaviour
     }
 
     //This is to update player score and Invoke Onscore event.
+    //Deni
     public void UpdateScore(int score)
     {
         _score += score;
         OnScoreUpdate?.Invoke();
     }
 
-
+    //Works same as score but here we instead updates the material.//Deni
     public void UpdateMaterials(int count)
     {
         _craftMaterial += count;
         OnMaterialUpdate?.Invoke();
     }
 
+    //Here method for crossbow activation that will be refrensed to other script. //Deni
     public void CrossBowActive()
     {
         Debug.Log("CrossBow");
