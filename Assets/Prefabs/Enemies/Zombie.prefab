@@ -151,13 +151,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03246270b617b334c9d6748c052017e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blood: {fileID: 3939828348241163975, guid: 2fd2d56972a68de4ab2f8e77d621c724, type: 3}
   _health: 100
   _bloodSplat:
   - {fileID: 5414573573822239572, guid: fbe5bb251eecc8345b9d60ada1086d7a, type: 3}
+  - {fileID: 5414573573822239572, guid: 64e7b34f10de1954c8169b819c16001a, type: 3}
+  - {fileID: 5414573573822239572, guid: 59046985efd72cf4a92ff1aaa81ca50f, type: 3}
+  - {fileID: 5414573573822239572, guid: 1fc1ad6ba45d637478f1791cfc3fd529, type: 3}
+  - {fileID: 5414573573822239572, guid: d08051169924e3645bb0814bac79a8b2, type: 3}
   - {fileID: 5414573573822239572, guid: 230af83b396a68941a4e9b3ead30da99, type: 3}
   _damage: 20
   _animator: {fileID: 1104828582}
+  _blood: {fileID: 3939828348241163975, guid: 2fd2d56972a68de4ab2f8e77d621c724, type: 3}
 --- !u!50 &5925312221954963939
 Rigidbody2D:
   serializedVersion: 4

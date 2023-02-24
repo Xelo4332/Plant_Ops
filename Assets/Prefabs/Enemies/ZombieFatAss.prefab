@@ -172,15 +172,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a28462d47b028154db576e2b8d12ffd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blood: {fileID: 3939828348241163975, guid: 2fd2d56972a68de4ab2f8e77d621c724, type: 3}
   _health: 200
   _bloodSplat:
-  - {fileID: 5414573573822239572, guid: fbe5bb251eecc8345b9d60ada1086d7a, type: 3}
+  - {fileID: 5414573573822239572, guid: 9bc7fb98abf25a24fba4049feed613cc, type: 3}
+  - {fileID: 5414573573822239572, guid: 0b5f8bae0665150459e38e7a2659ffc3, type: 3}
   _damage: 10
+  _animator: {fileID: 2266783128672624989}
+  _blood: {fileID: 3939828348241163975, guid: 2fd2d56972a68de4ab2f8e77d621c724, type: 3}
   _explosionEffects: {fileID: 3616516096010658101, guid: 17318505b3beac145b6ab5a0426e2b6b, type: 3}
   _explosionDamage: 50
   _delayExplosion: 3
-  _explosionDistance: 5
+  _explosionDistance: 20
 --- !u!82 &4091742632911848302
 AudioSource:
   m_ObjectHideFlags: 0

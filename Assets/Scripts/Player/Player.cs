@@ -124,8 +124,7 @@ public class Player : MonoBehaviour
         _health -= damage;
         if (_health <= 0)
         {
-            _playerBody.constraints = RigidbodyConstraints2D.FreezeRotation;
-            _playerBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+
 
 
             _anim.SetBool("Dead", true);
