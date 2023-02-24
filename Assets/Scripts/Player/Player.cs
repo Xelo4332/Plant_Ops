@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _movementSpeed;
     [SerializeField] private int _craftMaterial;
     [SerializeField] private Weapon _weapon;
+    [SerializeField] private SpriteRenderer[] _sprites;
 
     private MovementController _movementController;
     private float _sprintSpeed = 20;
@@ -123,7 +124,12 @@ public class Player : MonoBehaviour
         _health -= damage;
         if (_health <= 0)
         {
+            _playerBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+            _playerBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+
             _anim.SetBool("Dead", true);
+            
         }
         StartRegeneration();
         OnhealthUpdate?.Invoke();

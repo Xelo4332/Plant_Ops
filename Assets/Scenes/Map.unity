@@ -6793,12 +6793,20 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4388207055664008673, guid: 7b32faaeae596e142b3d0fd9aa67762d, type: 3}
+      propertyPath: _playerSprite
+      value: 
+      objectReference: {fileID: 1469689270}
+    - target: {fileID: 4388207055664008673, guid: 7b32faaeae596e142b3d0fd9aa67762d, type: 3}
       propertyPath: _craftMaterial
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4388207055664008673, guid: 7b32faaeae596e142b3d0fd9aa67762d, type: 3}
       propertyPath: RegenerationAmount
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388207055664008673, guid: 7b32faaeae596e142b3d0fd9aa67762d, type: 3}
+      propertyPath: _sprites.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4388207055664008674, guid: 7b32faaeae596e142b3d0fd9aa67762d, type: 3}
       propertyPath: m_RootOrder
@@ -41707,6 +41715,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &1469689270 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4388207055664008675, guid: 7b32faaeae596e142b3d0fd9aa67762d, type: 3}
+  m_PrefabInstance: {fileID: 335105270}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1470863669
 GameObject:
   m_ObjectHideFlags: 0
