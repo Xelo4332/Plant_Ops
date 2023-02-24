@@ -180,9 +180,9 @@ MonoBehaviour:
   _animator: {fileID: 2266783128672624989}
   _blood: {fileID: 3939828348241163975, guid: 2fd2d56972a68de4ab2f8e77d621c724, type: 3}
   _explosionEffects: {fileID: 3616516096010658101, guid: 17318505b3beac145b6ab5a0426e2b6b, type: 3}
-  _explosionDamage: 50
+  _explosionDamage: 30
   _delayExplosion: 3
-  _explosionDistance: 20
+  _explosionDistance: 8
 --- !u!82 &4091742632911848302
 AudioSource:
   m_ObjectHideFlags: 0
