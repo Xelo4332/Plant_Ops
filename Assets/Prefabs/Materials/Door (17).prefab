@@ -155,8 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
-  _scoreNeededToBuyDoor: 10
-  _scoreRemovalAfterBuy: 10
+  _price: 0
 --- !u!114 &2070772987655013534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2070772988515039092
 RectTransform:
   m_ObjectHideFlags: 0

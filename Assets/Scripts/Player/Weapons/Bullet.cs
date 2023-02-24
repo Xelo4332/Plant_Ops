@@ -15,7 +15,11 @@ public class Bullet : MonoBehaviour
     //Om skotten träffar något objekt, då kommer den automatisk förstöra den
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Destroy(gameObject);
+        if (col.CompareTag("Walls"))
+        {
+           Destroy(gameObject);
+        }
+        
     }
 
 }
