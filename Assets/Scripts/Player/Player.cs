@@ -125,9 +125,8 @@ public class Player : MonoBehaviour
         if (_health <= 0)
         {
 
-
-
             _anim.SetBool("Dead", true);
+            _playerBody.bodyType = RigidbodyType2D.Static;
             
         }
         StartRegeneration();
