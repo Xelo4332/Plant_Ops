@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrossBow : MonoBehaviour
+public class CrossBow : MonoBehaviour // -kacper
 {
     [SerializeField] private Transform barrelTip;
 
@@ -23,15 +23,15 @@ public class CrossBow : MonoBehaviour
 
     private void CrossBowAction()
     {
-        GameObject boltInstance = Instantiate(bolt, barrelTip.position, barrelTip.rotation);
-        boltInstance.GetComponent<Rigidbody2D>().velocity = barrelTip.up * _boltSpeed;
+        GameObject boltInstance = Instantiate(bolt, barrelTip.position, barrelTip.rotation); 
+        boltInstance.GetComponent<Rigidbody2D>().velocity = barrelTip.up * _boltSpeed; // spawns bolt at the "barrelTip" position
         Destroy(boltInstance, 5);
     }
 
     public void CrossBowAttack()
     {
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C)) // when "c" is pressed then the "CrossBowAction" method activates
         {
 
             CrossBowAction();
@@ -41,7 +41,5 @@ public class CrossBow : MonoBehaviour
 
 
     }
-
-    // Update is called once per frame
 
 }

@@ -8,6 +8,7 @@ public class UIBuyShow : InteractibleItem
     [SerializeField] private GameObject _UICanvas;
     [SerializeField] private GameObject _outLineDoor;
    
+    //Here we will set our uicanvas true and turn on sprite online when he will enter the collider.
     private new void OnTriggerEnter2D(Collider2D col)
     {
 
@@ -18,7 +19,7 @@ public class UIBuyShow : InteractibleItem
 
         }
     }
-
+    //When will exet from the collider, then we will turn canvas and outline.
     private new void OnTriggerExit2D(Collider2D col)
     {
         base.OnTriggerExit2D(col);

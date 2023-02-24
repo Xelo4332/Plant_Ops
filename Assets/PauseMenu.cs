@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenu : MonoBehaviour // Kacper
 {
     public static bool GameIsPaused = false;
     public GameObject _mainUI;
@@ -11,35 +11,35 @@ public class PauseMenu : MonoBehaviour
     public GameObject _pausemenuUI;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) // when "ESC" is pressed...
         {
 
-            if (GameIsPaused)
+            if (GameIsPaused) // If the game is paused then resume
             {
                 Resume();
             }
-            else
+            else // and if the game isnt paused then pause it
             {
                 Pause();
             }
         }
     }
-   public  void Resume()
+   public  void Resume() // when game resumed
     {
-        _mainUI.SetActive(true);
-        _otherUI.SetActive(true);
-        _pausemenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        GameIsPaused = false;
+        _mainUI.SetActive(true); // turns on the game UI
+        _otherUI.SetActive(true); // turns on some other game UI
+        _pausemenuUI.SetActive(false); // turns off the pause menu UI
+        Time.timeScale = 1f; // time goes normally
+        GameIsPaused = false; // sets the GameIsPaused variable to false
     }
 
-    void Pause()
+    void Pause() // when game is paused
     {
-        _mainUI.SetActive(false);
-        _otherUI.SetActive(false);
-        _pausemenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        GameIsPaused = true;
+        _mainUI.SetActive(false);  // turns off the game UI
+        _otherUI.SetActive(false); // same with some other UI
+        _pausemenuUI.SetActive(true); // turns on the Pause UI
+        Time.timeScale = 0f; // time goes to 0 = pause
+        GameIsPaused = true; // same as above but it becomes true instead
     }
 
     

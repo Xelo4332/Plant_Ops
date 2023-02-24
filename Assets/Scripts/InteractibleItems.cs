@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//OPS WE DO NOT USE THIS SCRIPT, WE USE INTREACTIBLE ITEM THAT IS LOCATED SAME FOLDER NAME
 public class InteractibleItems : MonoBehaviour
 {
     public int _craftableItems;
