@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//NOT USING OBS!
 public class SpawnerController : MonoBehaviour
 {
   

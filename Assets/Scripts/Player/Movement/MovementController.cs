@@ -10,7 +10,7 @@ public class MovementController
     private Animator _anim;
 
 
-
+    //This going to be used in other scripts refrense.
     public MovementController(Rigidbody2D playerBody, Animator playerAnimator)  
     {
         _playerBody = playerBody;
